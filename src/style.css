@@ -3,7 +3,7 @@
 }
 
 html, #loginView {
-    
+
     background-image: url(../images/house_icon_twoRows.jpg);
     background-position: right bottom, left top;
     background-repeat: repeat;
@@ -35,7 +35,7 @@ h2{
 }
 
 #loginRightSide {
-    border-left: 1px solid gray;  
+    border-left: 1px solid gray;
     padding-bottom: 5px;
     padding-top: 12px;
     display: inline-block;
@@ -46,8 +46,6 @@ h2{
     padding-top: 20px;
     padding-right: 30px;
 }
-
-
 
 .weatherbox{
     margin-top: 5%;
@@ -75,7 +73,6 @@ h2{
 .rounded-button > .bottom {
     margin-top: 130%;
 }
-
 .rounded-button > .login {
     height: 100px;
     width: 100px;
