@@ -15,27 +15,50 @@
 
 
 <body>
-    
+
     <!--loginView page-->
 
     <div id="loginView">
-        <div class="login">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="exampleInputName2">Name</label>
-                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail2">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
-                </div>
-                <button type="submit" class="btn btn-default">Send invitation</button>
-            </form>
-        </div>
-    </div>
 
-    <!--end of loginView page-->
-    
+        <div id="loginForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="loginLeftSide">
+                        <h1>Smart Home Login</h1>
+                        <h2>Wellcome</h2>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-7" id="loginRightSide">
+                        <form class="form-horizontal">
+                            <div class="form-group has-feedback">
+                                <div class="col-sm-12">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <div class="col-sm-12">
+                                    <input type="password" class="form-control" id="inputPw" placeholder="Password">
+                                    <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class="form-horizontal">
+                                <div class="form group">
+                                    <input type="checkbox"> Remember me
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 rounded-button" id="loginEnter">
+                        <button class="btn btn-success login">click for login</button>
+                    </div>
+
+                </div> <!--row ends-->
+
+            </div> <!--container ends-->
+        </div><!--end of loginForm -->
+    </div><!--end of loginView-->
+   
     <!--homeView page-->
 
     <div id="homeView">
@@ -56,6 +79,8 @@
                 </div>
             </nav>
         </div> <!--end of header-->
+
+
 
         <div class="container">
             <div class="menu">
@@ -92,6 +117,8 @@
 
 
     </div><!--end of homePageView-->
+
+
 
 </body>
 </html>

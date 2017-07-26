@@ -1,5 +1,53 @@
 ﻿body {
+
 }
+
+html, #loginView {
+    
+    background-image: url(../images/house_icon_twoRows.jpg);
+    background-position: right bottom, left top;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+#loginForm {
+    border: 2px solid grey;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 250px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+h1{
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#loginRightSide {
+    border-left: 1px solid gray;  
+    padding-bottom: 5px;
+    padding-top: 12px;
+    display: inline-block;
+}
+
+#loginEnter {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 30px;
+}
+
+
 
 .weatherbox{
     margin-top: 5%;
@@ -26,4 +74,9 @@
 }
 .rounded-button > .bottom {
     margin-top: 130%;
+}
+
+.rounded-button > .login {
+    height: 100px;
+    width: 100px;
 }
