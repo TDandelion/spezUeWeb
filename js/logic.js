@@ -8,3 +8,7 @@ function switchViews(view) {
         }
     }
 }
+
+function showWeather(data){
+  console.log(data);
+}

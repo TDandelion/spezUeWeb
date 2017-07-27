@@ -22,15 +22,7 @@ html, #loginView {
     margin-right: 20%;
 }
 
-
-h1{
-    text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 25px;
-}
-
-h2{
-    text-align: center;
+.header-font{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
