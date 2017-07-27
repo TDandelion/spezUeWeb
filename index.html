@@ -9,6 +9,7 @@
     <meta charset="utf-8" />
     <script src="js/controller.js"></script>
     <script src="js/logic.js"></script>
+    <script src="js/model.js"></script>
     <link href="src/style.css" rel="stylesheet" />
 </head>
 
@@ -23,11 +24,11 @@
         <div id="loginForm">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-3 col-xs-3" id="loginLeftSide">
-                        <h1>Smart Home Login</h1>
-                        <h2>Welcome</h2>
+                    <div class="col-md-3 col-sm-3 col-xs-10" id="loginLeftSide">
+                        <h2 class="text-center header-font">Smart Home</h2>
+                        <h3 class="text-center header-font">Welcome</h3>
                     </div>
-                    <div class="col-md-7 col-sm-7 col-xs-7" id="loginRightSide">
+                    <div class="col-md-7 col-sm-6 col-xs-8" id="loginRightSide">
                         <form class="form-horizontal">
                             <div class="form-group has-feedback">
                                 <div class="col-sm-12">
@@ -37,7 +38,7 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <div class="col-sm-12">
-                                    <input type="password" class="form-control" id="inputPw" placeholder="Password">
+                                    <input type="password" class="form-control" id="inputPw" placeholder="********">
                                     <i class="glyphicon glyphicon-lock form-control-feedback"></i>
                                 </div>
                             </div>
@@ -48,7 +49,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-1 col-sm-1 col-xs-1 rounded-button" id="loginEnter">
+                    <div class="col-md-2 col-sm-1 col-xs-1 rounded-button" id="loginEnter">
                         <button class="btn btn-success login">login</button>
                     </div>
 
@@ -91,9 +92,9 @@
                             <h1>Test</h1>
                         </div>
                         <div class="col-md-offset-3 col-xs-offset-1 col-sm-offset-3 btn-group-vertical btn-group-lg" role="group">
-                            <button class="btn btn-primary">Übersicht</button>
+                            <button class="btn btn-primary" id="overview">Übersicht</button>
                             <br>
-                            <button class="btn btn-primary">Status ändern</button>
+                            <button class="btn btn-primary" id="status">Status ändern</button>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
