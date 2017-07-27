@@ -13,6 +13,9 @@ $(document).ready(() => {
     $(".login").click(function(){
       switchViews("homeView");
     });
+    $(".logout").click(function () {
+        switchViews("loginView");
+    });
 
     //not final
     /*$("button").click(function(){
