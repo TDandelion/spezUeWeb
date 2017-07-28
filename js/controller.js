@@ -1,4 +1,4 @@
-﻿var views = ["homeView", "loginView"];
+﻿var views = ["homeView", "loginView", "roomSettingsView", "securitySettingsView"];
 //Date
 let date = new Date().toLocaleDateString();
 let clock = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric" });
@@ -10,12 +10,20 @@ $(document).ready(() => {
 
     $("#date").text(date);
     $("#time").text(clock);
+    
     $(".login").click(function(){
-      switchViews("homeView");
+        switchViews("homeView");       
     });
     $(".logout").click(function () {
         switchViews("loginView");
     });
+    $("#roomSettingsBtn").click(function () {
+        switchViews("roomSettingsView");
+    });
+    $("#securitySettingsBtn").click(function () {
+        switchViews("securitySettingsView");
+    });
+   
 
     //not final
     /*$("button").click(function(){
