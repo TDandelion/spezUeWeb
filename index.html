@@ -50,7 +50,7 @@
                         </form>
                     </div>
                     <div class="col-md-2 col-sm-1 col-xs-1 rounded-button" id="loginEnter">
-                        <button class="btn btn-success login">login</button>
+                        <button class="btn btn-success login"><i class="glyphicon glyphicon-log-in"></i><br />login</button>
                     </div>
 
                 </div> <!--row ends-->
@@ -58,10 +58,11 @@
             </div> <!--container ends-->
         </div><!--end of loginForm -->
     </div><!--end of loginView-->
-
     <!--homeView page-->
 
-    <div id="homeView">
+
+
+    <div id="headerView">
 
         <div class="header">
             <nav class="navbar navbar-default">
@@ -79,11 +80,11 @@
                 </div>
             </nav>
         </div> <!--end of header-->
+    </div> <!--end of headerView-->
 
-  
+    <div id="homeView">
 
-
-       <div class="container"> 
+        <div class="container">
             <div class="menu">
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-4">
@@ -98,31 +99,85 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="row mainMenu">
-                            <div class="col-md-3 col-sm-4 col-xs-4 rounded-button has-feedback">
-                                <button class="btn btn-success top">Raumverwaltung<i class="glyphicon glyphicon-envelope form-control-feedback"></i></button>
-                                <button class="btn btn-success security">Sicherheit</button>
+                        <div class="row mainMenu" style="border:1px solid green">
+                            <div class="col-md-3 col-sm-4 col-xs-4 rounded-button" style="border:1px solid red">
+                                <button class="btn btn-success top" id="roomSettingsBtn"><i class="glyphicon glyphicon-home glyphiconMenu"></i><br />Raumverwaltung</button>
+                                <button class="btn btn-success security" id="securitySettingsBtn"><i class="glyphicon glyphicon-warning-sign glyphiconMenu"></i><br />Sicherheit</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-danger">Einstellungen</button>
-                                <button class="btn btn-danger bottom">Lichter</button>
+                                <button class="btn btn-danger"><i class="glyphicon glyphicon-cog glyphiconMenu"></i><br />Einstellungen</button>
+                                <button class="btn btn-danger bottom"><i class=" glyphicon glyphicon-lamp glyphiconMenu"></i><br />Lichter</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-danger top">Wasser</button>
-                                <button class="btn btn-danger">Video</button>
+                                <button class="btn btn-danger top"><i class="glyphicon glyphicon-tint glyphiconMenu"></i><br />Wasser</button>
+                                <button class="btn btn-danger"><i class="glyphicon glyphicon-facetime-video glyphiconMenu"></i><br />Video</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 rounded-button rightSide">
-                        <button class="btn btn-danger logout">Logout</button>
+                        <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
                     </div>
                 </div>
             </div>  <!--end of menu-->
-            </div> <!--end of container-->
+        </div> <!--end of container-->
 
 
-        </div><!--end of homePageView-->
+    </div><!--end of homePageView-->
+    <!--start of roomSettingsView page-->
 
+    <div id="roomSettingsView">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Raumverwaltung</li>
+            </ol>
+
+            <div class="menu">
+                <div class="row mainMenu">
+
+                    <div class="col-md-offset-4 col-md-2">
+                        <div class="rounded-button rightSide">
+                            <button class="btn btn-warning"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />Küeche</button>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-4 col-md-2">
+                        <div class="rounded-button rightSide">
+                            <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-2">
+                        <div class="rounded-button rightSide">
+                            <button class="btn btn-warning"><i class="glyphicon glyphicon-briefcase glyphiconMenu"></i><br />Vorzimmer</button>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-2 col-md-2">
+                        <div class="rounded-button rightSide">
+                            <button class="btn btn-warning"><i class="glyphicon glyphicon-bed glyphiconMenu"></i><br />Schlafzimmer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-2">
+                        <div class="rounded-button rightSide">
+                            <button class="btn btn-warning"><i class=" glyphicon glyphicon-blackboard glyphiconMenu"></i><br />Wohnzimmer</button>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-2 col-md-2">
+                        <div class="rounded-button rightSide">
+                            <button class="btn btn-success"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />Hinfügen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!--end of roomSettingsView page-->
+    <!--start of securitySettingsView page-->
+
+    <div id="securitySettingsView">
+        <h1>test security view</h1>
+    </div> <!--end of securitySettingsView page-->
 
 
 </body>
