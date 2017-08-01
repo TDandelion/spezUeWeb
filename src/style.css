@@ -12,7 +12,7 @@
     margin-right: 20%;
 }
 
-.header-font{
+.header-font {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -32,27 +32,28 @@
 .menu {
     background-color: white;
     padding: 10px 10px 10px 10px;
-
 }
 
 
-.weatherbox{
+.weatherbox {
     margin-top: 5%;
     border: 1px solid black;
     margin-bottom: 5%;
     max-width: 400px;
     min-height: 300px;
 }
-#weatherIcon{
+
+#weatherIcon {
     font-size: 72px !important;
 }
-.glyphicon{
+
+.glyphicon {
     font-size: 16px;
 }
 
 .glyphiconMenu {
-    vertical-align:middle;
-    font-size:25px;
+    vertical-align: middle;
+    font-size: 25px;
     margin-bottom: 5px;
 }
 
@@ -64,9 +65,11 @@
     align-self: flex-start;
     margin: 10px;
 }
+
 .rounded-button > .top {
     align-self: flex-start;
 }
+
 .rounded-button > .bottom {
     margin-top: 130%;
     align-self: flex-start;
@@ -80,7 +83,7 @@
 .rounded-button > .logout {
     height: 100px;
     width: 100px;
-    align-self:flex-end;
+    align-self: flex-end;
     margin-bottom: 5px;
 }
 
@@ -96,4 +99,30 @@
     justify-content: center;
 }
 
+.homeSymbol {
+    height: 180px;
+    width: 180px;
+}
+
+.pic{
+    max-height: 800px;
+    max-width: 350px;
+}
+
+.picKueche {
+    max-height: 800px;
+    max-width: 200px;
+}
+
+td span {
+    text-align: center;
+    vertical-align: middle;
+    align-items:center;
+}
+
+.menuLabel {
+    min-width:200px;
+    display: inline-block;
+    font-size:18px;
+}
 

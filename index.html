@@ -83,6 +83,9 @@
     </div> <!--end of headerView-->
 
     <div id="homeView">
+        <ol class="breadcrumb" style="visibility: hidden">
+            <li><a href="#" class="homeLink">Home</a></li>
+        </ol>
 
         <div class="container">
             <div class="menu">
@@ -104,13 +107,14 @@
 
                         <div class="row mainMenu">
 
-                   <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
+                            <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-default top" id="roomSettingsBtn"><i class="glyphicon glyphicon-home glyphiconMenu"></i><br />Raumverwaltung</button>
                                 <button class="btn btn-default security" id="securitySettingsBtn"><i class="glyphicon glyphicon-warning-sign glyphiconMenu"></i><br />Sicherheit</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-default"><i class="glyphicon glyphicon-cog glyphiconMenu"></i><br />Einstellungen</button>
                                 <button class="btn btn-default bottom"><i class=" glyphicon glyphicon-lamp glyphiconMenu"></i><br />Lichter</button>
+
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-default top"><i class="glyphicon glyphicon-tint glyphiconMenu"></i><br />Wasser</button>
@@ -118,8 +122,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 rounded-button rightSide">
-                        <button class="btn btn-default logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
+                    <div class="col-md-2 col-sm-2 col-xs-2 rightSide">
+                        <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                        <!--<button class="btn btn-default logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>-->
+
                     </div>
                 </div>
             </div>  <!--end of menu-->
@@ -131,17 +137,22 @@
 
     <div id="roomSettingsView">
 
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Raumverwaltung</li>
-            </ol>
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
+            <li class="active">Raumverwaltung</li>
+        </ol>
         <div class="container">
             <div class="menu">
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <h2>Raumwervaltung</h2>
+                        <img class="pic" src="images/61831580-Furniture-and-home-decor-icon-set-vector-illustration-Indoor-cabinet-interior-room-library-office-bo-Stock-Vector.jpg " />
+
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="row mainMenu">
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-defaults top"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />Küche</button>
+                                <button class="btn btn-defaults top  kitchenLink"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />Küche</button>
                                 <button class="btn btn-default"><i class="glyphicon glyphicon-phone-alt glyphiconMenu"></i><br />Vorzimmer</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
@@ -155,7 +166,8 @@
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 rounded-button rightSide">
-                        <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
+                        <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                        <!-- <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>-->
                     </div>
 
                 </div>
@@ -165,16 +177,21 @@
     <!--start of securitySettingsView page-->
 
     <div id="securitySettingsView">
-       
-    <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
+
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
             <li class="active">Security</li>
         </ol>
 
         <div class="container">
             <div class="menu">
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <h2>Sicherheitsverwaltung</h2>
+                        <img class="pic" src="images/safety-security-icons-set-38500318.jpg " />
+
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="row mainMenu">
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-defaults top"><i class="glyphicon glyphicon-align-justify glyphiconMenu"></i><br />Rollos</button>
@@ -191,14 +208,99 @@
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 rounded-button rightSide">
-                        <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
+                        <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                        <!-- <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>-->
                     </div>
 
                 </div>
             </div>  <!--end of menu-->
         </div> <!--end of container-->
     </div> <!--end of securitySettingsView page-->
+    <!--start of kitchenView page-->
+    <div id="kitchenView">
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
+            <li><a href="#" class="roomLink">Raumverwaltung</a></li>
+            <li class="active">Küche</li>
+        </ol>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-5 btn-group-lg" role="group">
+                    <button class="btn btn-default allBtnOn">Alle einschalten</button>
+                    <button class="btn btn-default allBtnOff">Alle ausschalten</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                    
+                    <br />
+                    <h1>Küche</h1>
+                    <br />
+                    <br />
+                    <i class="glyphicon glyphicon-cutlery glyphiconMenu" style="font-size:100px"></i>
+                </div>
+                <div class="col-md-7 col-sm-6 col-sm-6">
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody id="kitchenTable">
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Bewegungsmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Fenster</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rauchmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rollos</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-7 col-md-2">
+                    <button class="btn btn-default btn-lg allBtnOn">Änderungen speichern</button>
+                </div>
+            </div>       
+        
+        </div>
+    </div> <!--end of kitchenView page-->
+
 
 
 </body>
 </html>
+
