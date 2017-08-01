@@ -1,17 +1,4 @@
-﻿body {
-    background-image: url(../images/house_icon_twoRows.jpg);
-    background-position: right bottom, left top;
-    background-repeat: repeat;
-    height: 100%;
-}
-
-html, #loginView {
-
-    background-image: url(../images/house_icon_twoRows.jpg);
-    background-position: right bottom, left top;
-    background-repeat: repeat;
-    height: 100%;
-}
+﻿
 
 #loginForm {
     border: 2px solid grey;
@@ -45,7 +32,7 @@ html, #loginView {
 .menu {
     background-color: white;
     padding: 10px 10px 10px 10px;
-    
+
 }
 
 
@@ -56,11 +43,11 @@ html, #loginView {
     max-width: 400px;
     min-height: 300px;
 }
+#weatherIcon{
+    font-size: 72px !important;
+}
 .glyphicon{
     font-size: 16px;
-}
-.glyphicon-cloud{
-    font-size: 80px;
 }
 
 .glyphiconMenu {

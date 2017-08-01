@@ -25,8 +25,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-10" id="loginLeftSide">
+                        <br>
                         <h2 class="text-center header-font">Smart Home</h2>
-                        <h3 class="text-center header-font">Welcome</h3>
                     </div>
                     <div class="col-md-7 col-sm-6 col-xs-8" id="loginRightSide">
                         <form class="form-horizontal">
@@ -89,8 +89,10 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="weatherbox text-center">
-                            <span class="glyphicon glyphicon-cloud"></span>
-                            <h1>Test</h1>
+                            <br>
+                            <i id="weatherIcon"></i>
+                            <h2 id="summary"></h2>
+                            <h3 id="temperature"></h3>
                         </div>
                         <div class="col-md-offset-3 col-xs-offset-1 col-sm-offset-3 btn-group-vertical btn-group-lg" role="group">
                             <button class="btn btn-primary" id="overview">Übersicht</button>
@@ -99,8 +101,10 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
+
                         <div class="row mainMenu">
-                            <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
+
+                   <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-default top" id="roomSettingsBtn"><i class="glyphicon glyphicon-home glyphiconMenu"></i><br />Raumverwaltung</button>
                                 <button class="btn btn-default security" id="securitySettingsBtn"><i class="glyphicon glyphicon-warning-sign glyphiconMenu"></i><br />Sicherheit</button>
                             </div>
@@ -115,7 +119,7 @@
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 rounded-button rightSide">
-                        <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
+                        <button class="btn btn-default logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>
                     </div>
                 </div>
             </div>  <!--end of menu-->
