@@ -153,14 +153,14 @@
                         <div class="row mainMenu">
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-defaults top  kitchenLink"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />Küche</button>
-                                <button class="btn btn-default"><i class="glyphicon glyphicon-phone-alt glyphiconMenu"></i><br />Vorzimmer</button>
+                                <button class="btn btn-default hallLink"><i class="glyphicon glyphicon-phone-alt glyphiconMenu"></i><br />Vorzimmer</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default"><i class="glyphicon glyphicon-bed glyphiconMenu"></i><br />Schalfzimmer</button>
-                                <button class="btn btn-default bottom"><i class="glyphicon glyphicon-blackboard glyphiconMenu"></i><br />Wohnzimmer</button>
+                                <button class="btn btn-default bedroomLink"><i class="glyphicon glyphicon-bed glyphiconMenu"></i><br />Schalfzimmer</button>
+                                <button class="btn btn-default bottom livingRoomLink"><i class="glyphicon glyphicon-blackboard glyphiconMenu"></i><br />Wohnzimmer</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default top"><i class="glyphicon glyphicon-tint glyphiconMenu"></i>Badezimmer<br /></button>
+                                <button class="btn btn-default top bathroomLink"><i class="glyphicon glyphicon-tint glyphiconMenu"></i>Badezimmer<br /></button>
                                 <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzufügen</button>
                             </div>
                         </div>
@@ -299,7 +299,333 @@
         </div>
     </div> <!--end of kitchenView page-->
 
+    <div id="bedroomView">
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
+            <li><a href="#" class="roomLink">Raumverwaltung</a></li>
+            <li class="active">Schlafzimmer</li>
+        </ol>
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-5 btn-group-lg" role="group">
+                    <button class="btn btn-default allBtnOn">Alle einschalten</button>
+                    <button class="btn btn-default allBtnOff">Alle ausschalten</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+
+                    <br />
+                    <h1>Schlafzimmer</h1>
+                    <br />
+                    <br />
+                    <i class="glyphicon glyphicon-bed glyphiconMenu" style="font-size:100px"></i>
+                </div>
+                <div class="col-md-7 col-sm-6 col-sm-6">
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody id="bedroomTable">
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Bewegungsmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Fenster</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rauchmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rollos</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-7 col-md-2">
+                    <button class="btn btn-default btn-lg allBtnOn">Änderungen speichern</button>
+                </div>
+            </div>
+
+        </div>
+    </div> <!--end of bedroomView page-->
+
+    <div id="bathroomView">
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
+            <li><a href="#" class="roomLink">Raumverwaltung</a></li>
+            <li class="active">Badezimmer</li>
+        </ol>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-5 btn-group-lg" role="group">
+                    <button class="btn btn-default allBtnOn">Alle einschalten</button>
+                    <button class="btn btn-default allBtnOff">Alle ausschalten</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+
+                    <br />
+                    <h1>Badezimmer</h1>
+                    <br />
+                    <br />
+                    <i class="glyphicon glyphicon-tint glyphiconMenu" style="font-size:100px"></i>
+                </div>
+                <div class="col-md-7 col-sm-6 col-sm-6">
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody id="bathroomTable">
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Bewegungsmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Fenster</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rauchmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rollos</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-7 col-md-2">
+                    <button class="btn btn-default btn-lg allBtnOn">Änderungen speichern</button>
+                </div>
+            </div>
+
+        </div>
+    </div> <!--end of bathroomView page-->
+
+    <div id="livingRoomView">
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
+            <li><a href="#" class="roomLink">Raumverwaltung</a></li>
+            <li class="active">Wohnzimmer</li>
+        </ol>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-5 btn-group-lg" role="group">
+                    <button class="btn btn-default allBtnOn">Alle einschalten</button>
+                    <button class="btn btn-default allBtnOff">Alle ausschalten</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+
+                    <br />
+                    <h1>Wohnzimmer</h1>
+                    <br />
+                    <br />
+                    <i class="glyphicon glyphicon-blackboard glyphiconMenu" style="font-size:100px"></i>
+                </div>
+                <div class="col-md-7 col-sm-6 col-sm-6">
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody id="livingRoomTable">
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Bewegungsmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Fenster</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rauchmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rollos</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-7 col-md-2">
+                    <button class="btn btn-default btn-lg allBtnOn">Änderungen speichern</button>
+                </div>
+            </div>
+
+        </div>
+    </div> <!--end of livingRoomView page-->
+
+    <div id="hallView">
+        <ol class="breadcrumb">
+            <li><a href="#" class="homeLink">Home</a></li>
+            <li><a href="#" class="roomLink">Raumverwaltung</a></li>
+            <li class="active">Vorzimmer</li>
+        </ol>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-5 btn-group-lg" role="group">
+                    <button class="btn btn-default allBtnOn">Alle einschalten</button>
+                    <button class="btn btn-default allBtnOff">Alle ausschalten</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+
+                    <br />
+                    <h1>Vorzimmer</h1>
+                    <br />
+                    <br />
+                    <i class="glyphicon glyphicon-phone-alt glyphiconMenu" style="font-size:100px"></i>
+                </div>
+                <div class="col-md-7 col-sm-6 col-sm-6">
+                    <br />
+                    <br />
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody id="hallRoomTable">
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Bewegungsmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Fenster</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rauchmelder</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Rollos</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
+                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
+                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-7 col-md-2">
+                    <button class="btn btn-default btn-lg allBtnOn">Änderungen speichern</button>
+                </div>
+            </div>
+
+        </div>
+    </div> <!--end of hallView page-->
 
 </body>
 </html>

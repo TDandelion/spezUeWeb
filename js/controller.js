@@ -1,4 +1,5 @@
-﻿var views = ["homeView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView"];
+﻿var views = ["homeView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView", "bedroomView",
+             "bathroomView", "hallView", "livingRoomView"];
 //Date
 let date = new Date().toLocaleDateString();
 let clock = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric" });
@@ -32,7 +33,18 @@ $(document).ready(() => {
     $(".kitchenLink").click(function () {
         switchViews("kitchenView");
     })
-
+    $(".bedroomLink").click(function () {
+        switchViews("bedroomView");
+    });
+    $(".bathroomLink").click(function () {
+        switchViews("bathroomView");
+    });
+    $(".hallLink").click(function () {
+        switchViews("hallView");
+    }); 
+    $(".livingRoomLink").click(function () {
+        switchViews("livingRoomView");
+    });
     
    
 
