@@ -21,11 +21,10 @@ function showWeather(data){
   let icon;
   console.log(data);
   switch(data.currently.icon){
-    case 'partly-cloudy-day': icon = 'glyphicon-cloud'  
+    case 'partly-cloudy-day': icon = 'glyphicon-cloud'
                         break;
-    case 'clear-day': icon = 'glyphicon-certificate'
+    case 'clear-day':   icon = 'glyphicon-certificate'
                         break;
-
     case 'rainy-day': icon = 'glypicon-cloud-download'
                         break;
     case 'snowy-day': icon = 'glyphicon-certificate'
@@ -33,7 +32,7 @@ function showWeather(data){
     default: icon = 'glyphicon-cloud'
                     break;
   }
-  
+
   $('#weatherIcon').attr('class', "glyphicon " + icon);
   let fahrenheit = data.currently.temperature;
   let celsius = (fahrenheit - 32) * 5 / 9;

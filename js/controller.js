@@ -11,9 +11,10 @@ $(document).ready(() => {
 
     $("#date").text(date);
     $("#time").text(clock);
-    
+
     $(".login").click(function(){
-        switchViews("homeView");       
+        $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
+        switchViews("homeView");
     });
     $(".logout").click(function () {
         switchViews("loginView");
@@ -41,12 +42,12 @@ $(document).ready(() => {
     });
     $(".hallLink").click(function () {
         switchViews("hallView");
-    }); 
+    });
     $(".livingRoomLink").click(function () {
         switchViews("livingRoomView");
     });
-    
-   
+
+
 
     //not final
     /*$("button").click(function(){
