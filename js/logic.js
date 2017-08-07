@@ -38,3 +38,11 @@ function showWeather(data){
   let celsius = (fahrenheit - 32) * 5 / 9;
   $('#temperature').text(Math.round(celsius) + "° C");
 };
+
+function showAlert() {
+    alert('Ihre Änderungen wurden erfolgreich gespeichert');
+    
+
+}
+
+
