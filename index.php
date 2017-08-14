@@ -11,7 +11,7 @@
     <script src="js/controller.js"></script>
     <script src="js/logic.js"></script>
     <script src="js/model.js"></script>
-    <link href="src/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 
 
@@ -28,12 +28,12 @@
                   <div class="form">
                         <div class="form-group has-feedback">
                               <label class="control-label">Email:</label>
-                              <input type="email" class="form-control" id="email" name="email" placeholder="test@email.com">
+                              <input type="email" class="form-control" id="email" placeholder="test@email.com">
                               <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
                         </div>
                         <div class="form-group has-feedback">
                               <label class="control-label">Password:</label>
-                              <input type="password" class="form-control" id="password"  name="password" placeholder="********">
+                              <input type="password" class="form-control" id="password"  placeholder="********">
                               <i class="glyphicon glyphicon-lock form-control-feedback"></i>
                         </div>
                         <div class="form-horizontal">
@@ -44,7 +44,7 @@
                             <button class="btn btn-primary btn-block login">Login</button>
 
                         </div>
-                  </div>
+                  </form>
 
 
                     <!--row ends-->

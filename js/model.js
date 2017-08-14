@@ -8,3 +8,16 @@ function getWeather(){
     error: function(err){ console.log(err)},
   });
 }
+
+function checkLogin(email, password) {
+$.ajax({
+    type: "POST",
+    url: "backend/admin.php",
+    data: {
+        email: email,
+        password: password,
+    },
+    success: login,
+    error: function(err){ console.log(err)}
+});
+}

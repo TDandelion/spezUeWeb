@@ -14,6 +14,7 @@ $(document).ready(() => {
 
     $(".login").click(function(){
         $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
+        checkLogin($("#email").val(), $("#password").val());
         switchViews("homeView");
     });
     $(".logout").click(function () {
