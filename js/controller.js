@@ -1,5 +1,5 @@
 ﻿var views = ["homeView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView", "bedroomView",
-             "bathroomView", "hallView", "livingRoomView"];
+    "bathroomView", "hallView", "livingRoomView", "windowView"];
 //Date
 let date = new Date().toLocaleDateString();
 let clock = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric" });
@@ -12,7 +12,7 @@ $(document).ready(() => {
     $("#date").text(date);
     $("#time").text(clock);
 
-    $(".login").click(function(){
+    $(".login").click(function () {
         $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
         checkLogin($("#email").val(), $("#password").val());
         switchViews("homeView");
@@ -24,6 +24,9 @@ $(document).ready(() => {
         switchViews("roomSettingsView");
     });
     $("#securitySettingsBtn").click(function () {
+        switchViews("securitySettingsView");
+    });
+    $(".securityLink").click(function () {
         switchViews("securitySettingsView");
     });
     $(".homeLink").click(function () {
@@ -47,7 +50,12 @@ $(document).ready(() => {
     $(".livingRoomLink").click(function () {
         switchViews("livingRoomView");
     });
-
+    $("#windowBtn").click(function () {
+        switchViews("windowView");
+    });
+    $(".saveChangesBtn").click(function () {
+        showAlert();
+    });
 
 
     //not final
