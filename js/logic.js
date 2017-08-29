@@ -1,4 +1,4 @@
-﻿
+
 function switchViews(view) {
 
     for (var i = 0; i < views.length; i++) {
@@ -10,7 +10,7 @@ function switchViews(view) {
         }
     }
 
-    if(view == "loginView"){
+    if(view === "loginView" || view === "registrationView"){
         $("#headerView").hide();
     }
 }
@@ -39,18 +39,13 @@ function showWeather(data){
   $('#temperature').text(Math.round(celsius) + "° C");
 };
 
-<<<<<<< HEAD
-
 function login(data){
 
   console.log(data);
 }
-=======
+
 function showAlert() {
     alert('Ihre Änderungen wurden erfolgreich gespeichert');
-    
-
+   
 }
 
-
->>>>>>> ceeb8bd14822f55ec88c082109cb84cfec71d4e0
