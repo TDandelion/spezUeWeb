@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -42,7 +42,7 @@
                             </div>
                             <br>
                             <button class="btn btn-primary btn-block login">Login</button>
-
+                            <button class="btn btn-default btn-block registration">Are you new user? Register now</button>
                         </div>
                   </form>
 
@@ -52,8 +52,7 @@
             </div> <!--container ends-->
         </div><!--end of loginForm -->
     </div><!--end of loginView-->
-    <!--homeView page-->
-
+</div> <!--end of loginView page-->
 
 
     <div id="headerView">
@@ -75,6 +74,74 @@
             </nav>
         </div> <!--end of header-->
     </div> <!--end of headerView-->
+
+        
+    
+<div id="registrationView">
+        <ol class="breadcrumb" style="visibility: hidden">
+            <li><a href="#" class="homeLink">Home</a></li>
+        </ol>
+    <div id="registrationForm">
+     <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Smart Home User Registration Form</h1>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                        <div class="form-group">
+                           <label for="inputFirstName" class="col-md-4 control-label">
+                             First Name</label>
+                           <div class="col-md-8">
+                                <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Enter First Name..." />
+                           </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLastName" class="col-md-4 control-label">
+                             Last Name</label>
+                            <div class="col-md-8">
+                               <input type="text" class="form-control" id="inputlastname" name="inputLastName" placeholder="Enter Last Name..." />
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-4 control-label">
+                             Email</label>
+                            <div class="col-md-8">
+                               <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter E-Mail Name..." />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="col-md-4 control-label">
+                             Password</label>
+                            <div class="col-md-8">
+                               <input type="text" class="form-control" id="inputPassword" name="inputPassword" placeholder="Enter Password..." />
+                            </div>
+                        </div> 
+                        <div class="form-group">
+                            <label for="repeatPassword" class="col-md-4 control-label">
+                             Confirm Password</label>
+                            <div class="col-md-8">
+                               <input type="text" class="form-control" id="repeatPassword" name="repeatPassword" placeholder="Re-type Password..." />
+                            </div>
+                        </div>                        
+                    </form>
+                </div>
+                <div class="panel-footer" style="text-align: right">
+                             <input type="submit" name="register" value="register now" class="btn btn-default">
+                             <input type="submit" name="cancel" value="cancel" class="btn btn-danger">                          
+                </div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+ </div>
+    
+
+    
+    <!--homeView page-->
 
     <div id="homeView">
         <ol class="breadcrumb" style="visibility: hidden">
