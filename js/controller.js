@@ -18,7 +18,7 @@ $(document).ready(() => {
         switchViews("homeView");
     });
     $(".registration").click(function(){
-       switchViews("registrationView"); 
+       switchViews("registrationView");
     });
     $(".logout").click(function () {
         switchViews("loginView");
@@ -58,6 +58,9 @@ $(document).ready(() => {
     });
     $(".saveChangesBtn").click(function () {
         showAlert();
+    });
+    $("#cancel").click(function() {
+        switchViews("loginView");
     });
 
 
