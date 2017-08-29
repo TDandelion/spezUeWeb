@@ -1,4 +1,4 @@
-﻿
+
 function switchViews(view) {
 
     for (var i = 0; i < views.length; i++) {
@@ -10,7 +10,7 @@ function switchViews(view) {
         }
     }
 
-    if(view == "loginView"){
+    if(view === "loginView" || view === "registrationView"){
         $("#headerView").hide();
     }
 }
@@ -39,7 +39,11 @@ function showWeather(data){
   $('#temperature').text(Math.round(celsius) + "° C");
 };
 
+<<<<<<< HEAD
 
+=======
+function login(data){
+>>>>>>> 1bb910fe179b8e4c4c12bc9d9b0442374d7bcd79
 
 function login(data){
   console.log(data);
@@ -47,4 +51,10 @@ function login(data){
 
 function showAlert() {
     alert('Ihre Änderungen wurden erfolgreich gespeichert');
+<<<<<<< HEAD
 }
+=======
+   
+}
+
+>>>>>>> 1bb910fe179b8e4c4c12bc9d9b0442374d7bcd79
