@@ -1,4 +1,4 @@
-﻿var views = ["homeView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView", "bedroomView",
+var views = ["homeView", "registrationView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView", "bedroomView",
     "bathroomView", "hallView", "livingRoomView", "windowView"];
 //Date
 let date = new Date().toLocaleDateString();
@@ -17,6 +17,9 @@ $(document).ready(() => {
         checkLogin($("#email").val(), $("#password").val());
         switchViews("homeView");
     });
+    $(".registration").click(function(){
+       switchViews("registrationView"); 
+    });
     $(".logout").click(function () {
         switchViews("loginView");
     });
@@ -30,14 +33,14 @@ $(document).ready(() => {
         switchViews("securitySettingsView");
     });
     $(".homeLink").click(function () {
-        switchViews("homeView")
+        switchViews("homeView");
     });
     $(".roomLink").click(function () {
-        switchViews("roomSettingsView")
+        switchViews("roomSettingsView");
     });
     $(".kitchenLink").click(function () {
         switchViews("kitchenView");
-    })
+    });
     $(".bedroomLink").click(function () {
         switchViews("bedroomView");
     });
