@@ -1,3 +1,36 @@
+<?php
+
+$firstName = $lastName = $email = $password = $confirmPassword = "";
+$firstNameErr = $lastNameerr = $emailErr = $passwordErr = $confirmPasswordErr = "";
+
+if(isset($_REQUEST['register'])){
+    $firstName = test_input($_REQUEST['inputFirstName']);
+    $lastName = test_input($_REQUEST['inputLastName']);
+    $email = test_input($_REQUEST['inputEmail']);
+    $password = test_input($_REQUEST['inputPassword']);
+    $confirmPassword = test_input($_REQUEST['repeatPassword']);
+    $errors = 0; 
+    
+    if(empty($firstName)){
+        $errors ++;
+        $firstNameErr = "First Name is required!";
+    }
+    
+
+}
+
+//data validation
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,9 +111,9 @@
         
     
 <div id="registrationView">
-        <ol class="breadcrumb" style="visibility: hidden">
-            <li><a href="#" class="homeLink">Home</a></li>
-        </ol>
+<ol class="breadcrumb" style="visibility: hidden">
+    <li><a href="#" class="homeLink">Home</a></li>
+</ol>
     <div id="registrationForm">
      <div class="container">
         <div class="row">
@@ -93,46 +126,49 @@
                     <form class="form-horizontal" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <div class="form-group">
                            <label for="inputFirstName" class="col-md-4 control-label">
-                             First Name</label>
+                             First Name*</label>
                            <div class="col-md-8">
                                 <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Enter First Name..." />
+                                <span class="error"><?php echo $firstNameErr;?></span>
                            </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName" class="col-md-4 control-label">
-                             Last Name</label>
+                             Last Name*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="inputlastname" name="inputLastName" placeholder="Enter Last Name..." />
                             </div>
                         </div> 
                         <div class="form-group">
                             <label for="inputEmail" class="col-md-4 control-label">
-                             Email</label>
+                             Email*</label>
                             <div class="col-md-8">
                                <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter E-Mail Name..." />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword" class="col-md-4 control-label">
-                             Password</label>
+                             Password*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="inputPassword" name="inputPassword" placeholder="Enter Password..." />
                             </div>
                         </div> 
                         <div class="form-group">
                             <label for="repeatPassword" class="col-md-4 control-label">
-                             Confirm Password</label>
+                             Confirm Password*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="repeatPassword" name="repeatPassword" placeholder="Re-type Password..." />
                             </div>
                         </div>                        
-                    </form>
+                    
                 </div>
                 <div class="panel-footer" style="text-align: right">
                              <input type="submit" name="register" value="register now" class="btn btn-default">
                              <input type="submit" name="cancel" value="cancel" class="btn btn-danger">                          
-                </div>                        
+                </div>  
+                </form>
                 </div>
+                
             </div>
         </div>
     </div>
