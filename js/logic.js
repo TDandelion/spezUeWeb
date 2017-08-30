@@ -21,15 +21,15 @@ function showWeather(data){
   let icon;
   console.log(data);
   switch(data.currently.icon){
-    case 'partly-cloudy-day': icon = 'glyphicon-cloud'
+    case 'partly-cloudy-day': icon = 'fa fa-cloud'
                         break;
-    case 'clear-day':   icon = 'glyphicon-certificate'
+    case 'clear-day':   icon = 'fa fa-sun-o'
                         break;
-    case 'rainy-day': icon = 'glypicon-cloud-download'
+    case 'rainy-day': icon = 'fa fa-tint'
                         break;
-    case 'snowy-day': icon = 'glyphicon-certificate'
+    case 'snowy-day': icon = 'fa fa-snowflake-o'
                         break;
-    default: icon = 'glyphicon-cloud'
+    default: icon = 'fa fa-cloud'
                     break;
   }
 
@@ -40,12 +40,9 @@ function showWeather(data){
 };
 
 function login(data){
-
   console.log(data);
 }
 
 function showAlert() {
     alert('Ihre Änderungen wurden erfolgreich gespeichert');
-   
 }
-

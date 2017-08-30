@@ -1,9 +1,9 @@
 <?php
 
- 
+
   $email = $_POST['email'];
   $password = $_POST['password'];
-  
+
   $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
   $sql = "SELECT * FROM user";
 
