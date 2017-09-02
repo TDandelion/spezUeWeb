@@ -1,6 +1,5 @@
 <?php
 
-
   $email = $_POST['email'];
   $password = $_POST['password'];
 
@@ -11,4 +10,4 @@
      echo $row['email']. "<br />";
      echo $row['name']."<br />";
      echo $row['password']."<br />";
-  }
+  };

@@ -2,32 +2,6 @@
 
 include 'layout.php';
 
-$firstName = $lastName = $email = $password = $confirmPassword = "";
-$firstNameErr = $lastNameerr = $emailErr = $passwordErr = $confirmPasswordErr = "";
-
-if(isset($_REQUEST['register'])){
-    $firstName = test_input($_REQUEST['inputFirstName']);
-    $lastName = test_input($_REQUEST['inputLastName']);
-    $email = test_input($_REQUEST['inputEmail']);
-    $password = test_input($_REQUEST['inputPassword']);
-    $confirmPassword = test_input($_REQUEST['repeatPassword']);
-    $errors = 0; 
-    
-    if(empty($firstName)){
-        $errors ++;
-        $firstNameErr = "First Name is required!";
-    }
-    
-
-}
-
-//data validation
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
 
  ?>
     <!--loginView page-->
@@ -101,60 +75,66 @@ function test_input($data) {
                     <h1 class="panel-title">Smart Home User Registration Form</h1>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <div class="form-horizontal" action="">
+                        <input type="text" hidden="" name="user_id" id="user_id">
                         <div class="form-group">
-                           <label for="inputFirstName" class="col-md-4 control-label">
+                           <label for="firstname" class="col-md-4 control-label">
                              First Name*</label>
                            <div class="col-md-8">
                                 <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Max" />
+                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>
+                                                
                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputLastName" class="col-md-4 control-label">
+                            <label for="lastname" class="col-md-4 control-label">
                              Last Name*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Mustermann" />
+                               <span class="error"><?php if(isset($errors['lastnameError'])){ echo $errors['lastnameError'];}?></span><br>                               
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-md-4 control-label">
+                            <label for="emailReg" class="col-md-4 control-label">
                              Email*</label>
                             <div class="col-md-8">
-                               <input type="email" class="form-control" id="email" name="email" placeholder="test@email.com" />
+                               <input type="email" class="form-control" id="emailReg" name="emailReg" placeholder="test@email.com" />
+                                <span class="error"><?php if(isset($errors['emailError'])){ echo $errors['emailError'];}?></span><br>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword" class="col-md-4 control-label">
+                            <label for="passwordReg" class="col-md-4 control-label">
                              Password*</label>
                             <div class="col-md-8">
-                               <input type="text" class="form-control" id="password" name="password" placeholder="***********" />
+                               <input type="password" class="form-control" id="passwordReg" name="passwordReg" placeholder="***********" />
+                               <span class="error"><?php if(isset($errors['passwordError'])){ echo $errors['passwordError'];}?></span><br>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="repeatPassword" class="col-md-4 control-label">
+                            <label for="repeatpassword" class="col-md-4 control-label">
                              Confirm Password*</label>
                             <div class="col-md-8">
-                               <input type="text" class="form-control" id="repeatpassword" name="repeatpassword" placeholder="***********" />
+                                <input type="password" class="form-control" id="repeatpassword" name="repeatpassword" placeholder="***********" />
+                                <span class="error"><?php if(isset($errors['repeatError'])){ echo $errors['repeatError'];}?></span><br>
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
                 <div class="panel-footer" style="text-align: right">
-                             <input type="submit" name="register" value="register now" class="btn btn-default">
+                    <input type="submit" id="register" name="register" value="register now" class="btn btn-default">
                              <input name="cancel" id="cancel" value="cancel" class="btn btn-danger">
                 </div>
+                    <p id="message"></p>
                 </div>
-                
+                </div>
             </div>
         </div>
     </div>
     </div>
  </div>
 
-
-
     <!--homeView page-->
-
+<a name="home" id="home"></a> 
     <div id="homeView">
         <ol class="breadcrumb" style="visibility: hidden">
             <li><a href="#" class="homeLink">Home</a></li>
@@ -171,9 +151,9 @@ function test_input($data) {
                             <h2 id="temperature"></h2>
                         </div>
                         <div class="col-md-offset-3 col-xs-offset-1 col-sm-offset-3 btn-group-vertical btn-group-lg" role="group">
-                            <button class="btn btn-primary" id="overview">Übersicht</button>
+                            <button class="btn btn-primary" id="overview">ï¿½bersicht</button>
                             <br>
-                            <button class="btn btn-primary" id="status">Status ändern</button>
+                            <button class="btn btn-primary" id="status">Status ï¿½ndern</button>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -226,7 +206,7 @@ function test_input($data) {
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="row mainMenu">
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-defaults top  kitchenLink"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />Küche</button>
+                                <button class="btn btn-defaults top  kitchenLink"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />Kï¿½che</button>
                                 <button class="btn btn-default hallLink"><i class="glyphicon glyphicon-phone-alt glyphiconMenu"></i><br />Vorzimmer</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
@@ -235,7 +215,7 @@ function test_input($data) {
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-default top bathroomLink"><i class="glyphicon glyphicon-tint glyphiconMenu"></i>Badezimmer<br /></button>
-                                <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzufügen</button>
+                                <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzufï¿½gen</button>
                             </div>
                         </div>
                     </div>
@@ -254,7 +234,7 @@ function test_input($data) {
         <ol class="breadcrumb">
             <li><a href="#" class="homeLink">Home</a></li>
             <li><a href="#" class="roomLink">Raumverwaltung</a></li>
-            <li class="active">Küche</li>
+            <li class="active">Kï¿½che</li>
         </ol>
 
         <div class="container">
@@ -269,7 +249,7 @@ function test_input($data) {
                 <div class="col-md-3 col-sm-3 col-xs-3 text-center">
 
                     <br />
-                    <h1>Küche</h1>
+                    <h1>Kï¿½che</h1>
                     <br />
                     <br />
                     <i class="glyphicon glyphicon-cutlery glyphiconMenu" style="font-size:100px"></i>
@@ -309,7 +289,7 @@ function test_input($data) {
                                     <td><button type="button" class="btn btn-default">Mehr</button></td>
                                 </tr>
                                 <tr>
-                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><div class="label label-default menuLabel">Tï¿½rschloï¿½</div></td>
                                     <td><input type="radio" name="kitchenOn" id="inlineRadio1" value="on"> on </td>
                                     <td><input type="radio" name="kitchenOff" id="inlineRadio2" value="off"> off</td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
@@ -325,7 +305,7 @@ function test_input($data) {
             </div>
             <div class="row">
                 <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                    <button class="btn btn-default btn-lg saveChangesBtn">ï¿½nderungen speichern</button>
                 </div>
             </div>
 
@@ -391,7 +371,7 @@ function test_input($data) {
                                     <td><button type="button" class="btn btn-default">Mehr</button></td>
                                 </tr>
                                 <tr>
-                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><div class="label label-default menuLabel">Tï¿½rschloï¿½</div></td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
@@ -407,7 +387,7 @@ function test_input($data) {
             </div>
             <div class="row">
                 <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                    <button class="btn btn-default btn-lg saveChangesBtn">ï¿½nderungen speichern</button>
                 </div>
             </div>
 
@@ -473,7 +453,7 @@ function test_input($data) {
                                     <td><button type="button" class="btn btn-default">Mehr</button></td>
                                 </tr>
                                 <tr>
-                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><div class="label label-default menuLabel">Tï¿½rschloï¿½</div></td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
@@ -489,7 +469,7 @@ function test_input($data) {
             </div>
             <div class="row">
                 <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                    <button class="btn btn-default btn-lg saveChangesBtn">ï¿½nderungen speichern</button>
                 </div>
             </div>
 
@@ -555,7 +535,7 @@ function test_input($data) {
                                     <td><button type="button" class="btn btn-default">Mehr</button></td>
                                 </tr>
                                 <tr>
-                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><div class="label label-default menuLabel">Tï¿½rschloï¿½</div></td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
@@ -571,7 +551,7 @@ function test_input($data) {
             </div>
             <div class="row">
                 <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                    <button class="btn btn-default btn-lg saveChangesBtn">ï¿½nderungen speichern</button>
                 </div>
             </div>
 
@@ -637,7 +617,7 @@ function test_input($data) {
                                     <td><button type="button" class="btn btn-default">Mehr</button></td>
                                 </tr>
                                 <tr>
-                                    <td><div class="label label-default menuLabel">Türschloß</div></td>
+                                    <td><div class="label label-default menuLabel">Tï¿½rschloï¿½</div></td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on </td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off</td>
                                     <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
@@ -653,7 +633,7 @@ function test_input($data) {
             </div>
             <div class="row">
                 <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                    <button class="btn btn-default btn-lg saveChangesBtn">ï¿½nderungen speichern</button>
                 </div>
             </div>
 
@@ -688,7 +668,7 @@ function test_input($data) {
                                 <button class="btn btn-default bottom"><i class=" glyphicon glyphicon-lamp glyphiconMenu"></i><br />Logo</button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default top"><i class="glyphicon glyphicon-lock glyphiconMenu"></i><br />Türschloss</button>
+                                <button class="btn btn-default top"><i class="glyphicon glyphicon-lock glyphiconMenu"></i><br />Tï¿½rschloss</button>
                                 <button class="btn btn-default"><i class="glyphicon glyphicon-refresh glyphicon-facetime-video glyphiconMenu"></i><br />Bewegungsmelder</button>
                             </div>
                         </div>
@@ -737,7 +717,7 @@ function test_input($data) {
                                 </thead>
                                 <tbody id="fenster">
                                     <tr>
-                                        <td><div class="label label-default menuLabel">Küche</div></td>
+                                        <td><div class="label label-default menuLabel">Kï¿½che</div></td>
                                         <td><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="on"> on
                                             <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="off"> off
                                         </td>
@@ -820,7 +800,7 @@ function test_input($data) {
                 </div>
                 <div class="row">
                     <div class="col-md-offset-7 col-md-2">
-                        <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                        <button class="btn btn-default btn-lg saveChangesBtn">ï¿½nderungen speichern</button>
                     </div>
                 </div>
 

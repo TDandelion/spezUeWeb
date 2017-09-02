@@ -21,3 +21,39 @@ $.ajax({
     error: function(err){ console.log(err)}
 });
 }
+
+function saveToDatabase(){
+    var firstname = $("#firstname").val();
+    var lastname = $("#lastname").val();
+    var emailReg = $("#emailReg").val();
+    var passwordReg = $("#passwordReg").val();
+    var repeatPass = $("#repeatpassword").val();
+    
+    $.ajax({
+        type: "POST",
+        url: "backend/validation.php",
+        async: false,
+        data: {
+            "done": 1,
+            "firstname": firstname,
+            "lastname": lastname,
+            "emailReg": emailReg,
+            "passwordReg": passwordReg,
+            "repeatPass": repeatPass
+        },
+        success: function(data) {
+            $("#firstname").val('');
+            $("#lastname").val('');
+            $("#emailReg").val('');
+            $("#passwordReg").val('');
+            $("#repeatpassword").val('');
+            $("#message").html(data);
+            $("p").addClass("alert alert-warning").css("color", "red");
+            },
+        error: function(err) {
+            alert('error');
+            $("#message").html();
+            $("p").addClass("alert alert-danger");
+            }
+        });
+}
