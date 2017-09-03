@@ -19,6 +19,7 @@ $(document).ready(() => {
     });
     $(".registration").click(function(){
        switchViews("registrationView");
+       $('.error').hide();
     });
     $(".logout").click(function () {
         switchViews("loginView");
@@ -62,7 +63,13 @@ $(document).ready(() => {
     $("#cancel").click(function() {
         switchViews("loginView");
     });
-
+    $(".home").click(function () {
+        switchViews("homeView");
+    });  
+    
+    $("#register").click(function(){
+        saveToDatabase();
+    });
 
     //not final
     /*$("button").click(function(){
