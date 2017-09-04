@@ -12,14 +12,13 @@ $(document).ready(() => {
     $("#date").text(date);
     $("#time").text(clock);
 
-    $(".login").click(function () {
+    $(".login").click(function(){
         $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
         checkLogin($("#email").val(), $("#password").val());
-        switchViews("homeView");
+
     });
     $(".registration").click(function(){
        switchViews("registrationView");
-       $('.error').hide();
     });
     $(".logout").click(function () {
         switchViews("loginView");

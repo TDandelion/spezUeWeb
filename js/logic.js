@@ -41,6 +41,8 @@ function showWeather(data){
 
 function login(data){
   console.log(data);
+  $("#login_message").html(data);
+  $("p").addClass("alert alert-warning").css("color", "red");
 }
 
 function showAlert() {

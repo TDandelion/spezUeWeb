@@ -15,10 +15,10 @@ $.ajax({
     url: "backend/admin.php",
     data: {
         email: email,
-        password: password,
+        password: password
     },
     success: login,
-    error: function(err){ console.log(err)}
+    error: function(err){ console.log(err);}
 });
 }
 

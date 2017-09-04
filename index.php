@@ -6,19 +6,18 @@ include 'layout.php';
  ?>
     <!--loginView page-->
     <div id="loginView">
-
         <div id="loginForm">
             <div class="container">
                   <h3 class="text-center">Smart Home</h3>
-                  <div class="form">
+                  <div class="form" action="">
                         <div class="form-group has-feedback">
                               <label class="control-label">Email:</label>
-                              <input type="email" class="form-control" id="email" placeholder="test@email.com">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="test@email.com">
                               <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
                         </div>
                         <div class="form-group has-feedback">
                               <label class="control-label">Password:</label>
-                              <input type="password" class="form-control" id="password"  placeholder="********">
+                              <input type="password" class="form-control" name="password" id="password"  placeholder="********">
                               <i class="glyphicon glyphicon-lock form-control-feedback"></i>
                         </div>
                         <div class="form-horizontal">
@@ -26,19 +25,15 @@ include 'layout.php';
                                 <input type="checkbox"> Remember me
                             </div>
                             <br>
-                            <button class="btn btn-primary btn-block login">Login</button>
+                        </div><!--end of loginForm-->                          
+                            <button class="btn btn-primary btn-block login" value="login">Login</button>
                             <button class="btn btn-default btn-block registration">New? Register now</button>
-                        </div>
-                  </form>
-
-
-                    <!--row ends-->
-
-            </div> <!--container ends-->
-        </div><!--end of loginForm -->
+                  </div><!--end of form action-->
+                  <p id="login_message">test</p>
+            </div><!--end of container-->
+        </div><!--loginForm-->
+        
     </div><!--end of loginView-->
-</div> <!--end of loginView page-->
-
 
     <div id="headerView">
 
@@ -122,7 +117,7 @@ include 'layout.php';
                 </div>
                 <div class="panel-footer" style="text-align: right">
                     <input type="submit" id="register" name="register" value="register now" class="btn btn-default">
-                             <input name="cancel" id="cancel" value="cancel" class="btn btn-danger">
+                    <input name="cancel" id="cancel" value="cancel" class="btn btn-danger">
                 </div>
                     <p id="message"></p>
                 </div>

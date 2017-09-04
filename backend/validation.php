@@ -101,3 +101,12 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
             return $data;
         }
 
+  if(isset($_POST['go'])){
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      
+      echo $email;
+      echo $password;
+      
+     
+  }
