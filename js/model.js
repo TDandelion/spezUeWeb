@@ -48,8 +48,8 @@ function saveToDatabase(){
             $("#passwordReg").val('');
             $("#repeatpassword").val('');
             $("#message").html(data);
-            $("p").addClass("alert alert-warning").css("color", "red");
-            },
+            $("p").addClass("alert alert-warning").css("color", "red");         
+            }, 
         error: function(err) {
             alert('error');
             $("#message").html();
