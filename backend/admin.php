@@ -20,8 +20,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
  $result = $statement->execute(array('email' => $email));
  $user = $statement->fetch();
  
+ 
   if ($user !== false && $password == $user['password']) {
     $_SESSION['userid'] = $user['user_id'];
+    $name = $user['name'];
          if(isset($_POST['remember'])){
             setcookie('email', $email, time()+60*60*24);
             setcookie('password', $password, time()+60*60*24);
@@ -29,27 +31,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
             setcookie('email', $email, time()-60*60*24);
             setcookie('password', $password, time()-60*60*24);
         }
-    echo '<script type="<text/javascript">',
-         '$("body").css("background-color", "white");',
-         'switchViews("homeView");',
-         '$("#wellcome_msg").text("Hello, '.$email.'! Wellcome!")',   
-         '</script>';
+        echo $name;
   } else {
-    echo "E-Mail oder Passwort war ungültig<br>";
+    return false;
     }
 
-//if (isset($_POST['showMsg'])){
-//    $email = $_POST['email'];
-//    $statement = $pdo->prepare("SELECT * FROM user where email = :email");
-//    $result = $statement->execute(array('email' => $email));
-//    $user = $statement->fetch();
-//    
-//    if ($user !== false) {
-//        $username = $user['user_id'];
-//    }
-//    echo '<script type="<text/javascript">',
-//         '$("body").css("background-color", "white");',
-//         'switchViews("homeView");',
-//         '$("#wellcome_msg").text("'.$username.'")',
-//         '</script>';    
-//}

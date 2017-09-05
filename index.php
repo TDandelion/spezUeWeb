@@ -8,6 +8,8 @@ include 'layout.php';
     <div id="loginView">
         <div id="loginForm">
             <div class="container">
+                <p id="login_message"></p>
+                <br>
                   <h3 class="text-center">Smart Home</h3>
                   <div class="form" action="">
                         <div class="form-group has-feedback">
@@ -29,7 +31,8 @@ include 'layout.php';
                             <button class="btn btn-primary btn-block login" value="login">Login</button>
                             <button class="btn btn-default btn-block registration">New? Register now</button>
                   </div><!--end of form action-->
-                  <p id="login_message"></p>
+                  
+                  
             </div><!--end of container-->
         </div><!--loginForm-->
         
@@ -46,7 +49,7 @@ include 'layout.php';
                         <li><a href="#"><span class="glyphicon glyphicon-minus"></span></a></li>
                     </ul>
                     <button class="navbar-btn btn btn-default">Kontrastversion anzeigen</button>
-                    <span id="wellcome_msg" name="wellcome_msg"></span>
+                    <span id="welcome_msg" name="welcome_msg"></span>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-time"></span></a></li>
                         <li><a href="#" id="time"></a></li>
@@ -56,7 +59,6 @@ include 'layout.php';
             </nav>
         </div> <!--end of header-->
     </div> <!--end of headerView-->
-
 
 
 <div id="registrationView">
@@ -148,9 +150,9 @@ include 'layout.php';
                             <h2 id="temperature"></h2>
                         </div>
                         <div class="col-md-offset-3 col-xs-offset-1 col-sm-offset-3 btn-group-vertical btn-group-lg" role="group">
-                            <button class="btn btn-primary" id="overview">�bersicht</button>
+                            <button class="btn btn-primary" id="overview">Übersicht</button>
                             <br>
-                            <button class="btn btn-primary" id="status">Status �ndern</button>
+                            <button class="btn btn-primary" id="status">Status ändern</button>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -201,15 +203,15 @@ include 'layout.php';
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="row mainMenu">
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-defaults top  kitchenLink"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br />K�che</button>
-                                <button class="btn btn-default hallLink"><i class="glyphicon glyphicon-phone-alt glyphiconMenu"></i><br />Vorzimmer</button>
+                                <button class="btn btn-default top Kueche"><i class="glyphicon glyphicon-cutlery glyphiconMenu"></i><br /><div class="text-center"><p id="0"></p></div></button>
+                                <button class="btn btn-default hallLink"><i class="glyphicon glyphicon-phone-alt glyphiconMenu"></i><br /><div class="text-center"><p id="1"></p></button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default bedroomLink"><i class="glyphicon glyphicon-bed glyphiconMenu"></i><br />Schalfzimmer</button>
-                                <button class="btn btn-default bottom livingRoomLink"><i class="glyphicon glyphicon-blackboard glyphiconMenu"></i><br />Wohnzimmer</button>
+                                <button class="btn btn-default bedroomLink"><i class="glyphicon glyphicon-bed glyphiconMenu"></i><br /><div class="text-center"><p id="2"></p></button>
+                                <button class="btn btn-default bottom livingRoomLink"><i class="glyphicon glyphicon-blackboard glyphiconMenu"></i><br /><div class="text-center"><p id="3"></p></button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default top bathroomLink"><i class="glyphicon glyphicon-tint glyphiconMenu"></i>Badezimmer<br /></button>
+                                <button class="btn btn-default top bathroomLink"><i class="glyphicon glyphicon-tint glyphiconMenu"></i><div class="text-center"><p id="4"></p><br /></button>
                                 <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzuf�gen</button>
                             </div>
                         </div>

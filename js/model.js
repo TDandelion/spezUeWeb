@@ -70,8 +70,8 @@ function logout(){
         success:function(){
             switchViews("loginView");
             $("body").css("background-color", "#DADADA");
-            $("#login_message").hide();
-            $("#message").hide();
+            //$("#login_message").hide();
+            //$("#message").hide();
         },
         error:function(err){
             alert("error");
@@ -79,22 +79,13 @@ function logout(){
     });
 }
 
-function displayWellcomeMessage(){
-    var email = $("#email").val();
-    
+function showRooms(){
     $.ajax({
-      url: "backend/admin.php",
+      url: "backend/menu.php",
       type: "POST",
-      data:{
-          "showMsg": 1,
-          "email": email,
-      },
-      success: function(data){
-          $("#wellcome_msg").html(data)
-      },
+      success: getRooms,
       error: function(err){
-          alert('error')
+          alert('error');
       }
-    });
-            
+    });  
 }

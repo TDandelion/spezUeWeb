@@ -13,17 +13,16 @@ $(document).ready(() => {
     $("#time").text(clock);
 
     $(".login").click(function(){
-        switchViews("homeView");
         checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
-        $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
-    });
+         /* Beim Einloggen wieder weißer Hintergrund*/
+   });
     $(".registration").click(function(){
        switchViews("registrationView");
     });
     $("#logout").click(logout);
         
     $("#roomSettingsBtn").click(function () {
-        switchViews("roomSettingsView");
+        showRooms();
     });
     $("#securitySettingsBtn").click(function () {
         switchViews("securitySettingsView");
@@ -37,7 +36,7 @@ $(document).ready(() => {
     $(".roomLink").click(function () {
         switchViews("roomSettingsView");
     });
-    $(".kitchenLink").click(function () {
+    $(".Kueche").click(function () {
         switchViews("kitchenView");
     });
     $(".bedroomLink").click(function () {

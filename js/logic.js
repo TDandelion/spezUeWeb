@@ -40,15 +40,27 @@ function showWeather(data){
 };
 
 function login(data){
-  console.log(data);
-  $("#login_message").html(data);
-  $("p").addClass("alert alert-warning").css("color", "red");
+  if(!data){
+      $("#login_message").html("<div class='alert alert-danger'>Login failed. Password or E-mail not correct</div>");
+      //$("p").addClass("alert alert-warning").css("color", "red");
+      switchViews("loginView");
+  } else{
+      $("#welcome_msg").text("Hello " + data);
+      $("body").css("background-color", "white");
+      switchViews("homeView");
+  }    
 }
 
 function showAlert() {
     alert('Ihre Änderungen wurden erfolgreich gespeichert');
 }
 
+function getRooms(data){
+    var obj = JSON.parse(data);
+    obj.forEach(function(value, ind){
+        console.log(ind);
+       $("#" + ind).text(value.raum_name);
+    });
+    switchViews('roomSettingsView');
 
-
-
+}
