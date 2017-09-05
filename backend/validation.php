@@ -3,6 +3,7 @@
 //registration form validation
 
 $firstname = $lastname = $emailReg = $passwordReg = $repeatPass = "";
+$email = $_POST['email'];
 $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
 
   if (isset($_POST['done'])){
@@ -94,10 +95,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
        }
   }
   
-          function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
 

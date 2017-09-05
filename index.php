@@ -46,6 +46,7 @@ include 'layout.php';
                         <li><a href="#"><span class="glyphicon glyphicon-minus"></span></a></li>
                     </ul>
                     <button class="navbar-btn btn btn-default">Kontrastversion anzeigen</button>
+                    <span id="wellcome_msg" name="wellcome_msg"></span>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-time"></span></a></li>
                         <li><a href="#" id="time"></a></li>

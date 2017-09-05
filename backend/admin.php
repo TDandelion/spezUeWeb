@@ -14,6 +14,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
 
  $email = $_POST['email'];
  $password = $_POST['password'];
+ 
   
  $statement = $pdo->prepare("SELECT * FROM user WHERE email = :email");
  $result = $statement->execute(array('email' => $email));
@@ -31,9 +32,24 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
     echo '<script type="<text/javascript">',
          '$("body").css("background-color", "white");',
          'switchViews("homeView");',
+         '$("#wellcome_msg").text("Hello, '.$email.'! Wellcome!")',   
          '</script>';
   } else {
     echo "E-Mail oder Passwort war ungültig<br>";
     }
 
-
+//if (isset($_POST['showMsg'])){
+//    $email = $_POST['email'];
+//    $statement = $pdo->prepare("SELECT * FROM user where email = :email");
+//    $result = $statement->execute(array('email' => $email));
+//    $user = $statement->fetch();
+//    
+//    if ($user !== false) {
+//        $username = $user['user_id'];
+//    }
+//    echo '<script type="<text/javascript">',
+//         '$("body").css("background-color", "white");',
+//         'switchViews("homeView");',
+//         '$("#wellcome_msg").text("'.$username.'")',
+//         '</script>';    
+//}

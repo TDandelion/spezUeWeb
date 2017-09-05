@@ -71,9 +71,30 @@ function logout(){
             switchViews("loginView");
             $("body").css("background-color", "#DADADA");
             $("#login_message").hide();
+            $("#message").hide();
         },
         error:function(err){
             alert("error");
         }
     });
+}
+
+function displayWellcomeMessage(){
+    var email = $("#email").val();
+    
+    $.ajax({
+      url: "backend/admin.php",
+      type: "POST",
+      data:{
+          "showMsg": 1,
+          "email": email,
+      },
+      success: function(data){
+          $("#wellcome_msg").html(data)
+      },
+      error: function(err){
+          alert('error')
+      }
+    });
+            
 }

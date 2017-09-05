@@ -13,6 +13,7 @@ $(document).ready(() => {
     $("#time").text(clock);
 
     $(".login").click(function(){
+        switchViews("homeView");
         checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
         $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
     });
