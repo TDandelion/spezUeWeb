@@ -67,7 +67,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
                 };
         }; 
     
-        if($_POST['repeatPass'] <> $_POST['passwordReg']) {
+        if(empty($_POST['passwordReg']) || $_POST['repeatPass'] <> $_POST['passwordReg']) {
             $errors ++;
             echo $repeatError;   
         }else{

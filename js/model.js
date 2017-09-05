@@ -9,20 +9,21 @@ function getWeather(){
   });
 }
 
-function checkLogin(email, password) {
+function checkLogin(email, password, remember) {
 $.ajax({
     type: "POST",
     url: "backend/admin.php",
     data: {
         email: email,
-        password: password
+        password: password,
+        remember: true,
     },
     success: login,
     error: function(err){ console.log(err);}
 });
 }
 
-function saveToDatabase(){
+function registerUserToDatabase(){
     var firstname = $("#firstname").val();
     var lastname = $("#lastname").val();
     var emailReg = $("#emailReg").val();
@@ -56,4 +57,23 @@ function saveToDatabase(){
             $("p").addClass("alert alert-danger");
             }
         });
+}
+
+function logout(){
+    $.ajax({
+        url: "backend/logout.php",
+        type: "POST",
+        async: false,
+        data:{
+            "logout": 1
+        },
+        success:function(){
+            switchViews("loginView");
+            $("body").css("background-color", "#DADADA");
+            $("#login_message").hide();
+        },
+        error:function(err){
+            alert("error");
+        }
+    });
 }

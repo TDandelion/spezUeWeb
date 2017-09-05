@@ -13,16 +13,14 @@ $(document).ready(() => {
     $("#time").text(clock);
 
     $(".login").click(function(){
+        checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
         $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
-        checkLogin($("#email").val(), $("#password").val());
-
     });
     $(".registration").click(function(){
        switchViews("registrationView");
     });
-    $(".logout").click(function () {
-        switchViews("loginView");
-    });
+    $("#logout").click(logout);
+        
     $("#roomSettingsBtn").click(function () {
         switchViews("roomSettingsView");
     });
@@ -67,7 +65,7 @@ $(document).ready(() => {
     });  
     
     $("#register").click(function(){
-        saveToDatabase();
+        registerUserToDatabase();
     });
 
     //not final

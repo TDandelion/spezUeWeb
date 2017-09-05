@@ -22,14 +22,14 @@ include 'layout.php';
                         </div>
                         <div class="form-horizontal">
                             <div class="form group">
-                                <input type="checkbox"> Remember me
+                                <input type="checkbox" name="remember" id="remember"> Remember me
                             </div>
                             <br>
                         </div><!--end of loginForm-->                          
                             <button class="btn btn-primary btn-block login" value="login">Login</button>
                             <button class="btn btn-default btn-block registration">New? Register now</button>
                   </div><!--end of form action-->
-                  <p id="login_message">test</p>
+                  <p id="login_message"></p>
             </div><!--end of container-->
         </div><!--loginForm-->
         
@@ -49,6 +49,7 @@ include 'layout.php';
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-time"></span></a></li>
                         <li><a href="#" id="time"></a></li>
+                        <li><a href="#" id="logout" name="logout">Logout</a></li>
                     </ul>
                 </div>
             </nav>
@@ -58,9 +59,9 @@ include 'layout.php';
 
 
 <div id="registrationView">
-<ol class="breadcrumb" style="visibility: hidden">
+<!--<ol class="breadcrumb" style="visibility: hidden">
     <li><a href="#" class="homeLink">Home</a></li>
-</ol>
+</ol>-->
     <div id="registrationForm">
      <div class="container">
         <div class="row">
@@ -172,8 +173,6 @@ include 'layout.php';
                     </div>
                     <div class="col-md-2 col-sm-2 hidden-xs rightSide">
                         <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
-                        <!--<button class="btn btn-default logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>-->
-
                     </div>
                 </div>
             </div>  <!--end of menu-->
@@ -216,7 +215,6 @@ include 'layout.php';
                     </div>
                     <div class="col-md-2 col-sm-2 hidden-xs rounded-button rightSide">
                         <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
-                        <!-- <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>-->
                     </div>
 
                 </div>
@@ -670,7 +668,6 @@ include 'layout.php';
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-2 rounded-button rightSide">
                         <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
-                        <!-- <button class="btn btn-danger logout"><i class="glyphicon glyphicon-log-out"></i><br />Logout</button>-->
                     </div>
 
                 </div>
