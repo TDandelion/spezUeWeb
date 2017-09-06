@@ -121,3 +121,26 @@ function showKitchenDevices(){
     });
 }
 
+function addDeviceToARoom(){
+    var deviceName = $("#deviceName").val();
+    var device = $("input[name=device]:checked", "#addingDeviceForm").val();
+    var room = $("input[name=room]:checked", "#addingDeviceForm").val();
+    var status = $("input[name=deviceStatus]:checked", "#addingDeviceForm").val();
+    
+    $.ajax({
+        url: "backend/validation.php",
+        type: "POST",
+        data:{
+          addDevice: 1,
+          name: deviceName,
+          device:device,
+          raum: room,
+          status: status
+        },
+        success: addDevice,
+        error: function(err){
+            alert("error");
+        }
+    })
+}
+

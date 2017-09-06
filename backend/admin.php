@@ -17,6 +17,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
  
   
  $statement = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+ 
+
  $result = $statement->execute(array('email' => $email));
  $user = $statement->fetch();
  
@@ -35,4 +37,3 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
   } else {
     return false;
     }
-

@@ -1,5 +1,5 @@
 var views = ["homeView", "registrationView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView", "bedroomView",
-    "bathroomView", "hallView", "livingRoomView", "windowView"];
+    "bathroomView", "hallView", "livingRoomView", "windowView", "addDeviceView"];
 //Date
 let date = new Date().toLocaleDateString();
 let clock = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric" });
@@ -70,6 +70,14 @@ $(document).ready(() => {
     
     $("#register").click(function(){
         registerUserToDatabase();
+    });
+    
+    $(".addDevice").click(function(){
+        switchViews("addDeviceView");
+    });
+    
+    $("#saveDevice").click(function(){
+        addDeviceToARoom();
     });
 
     //not final

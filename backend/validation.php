@@ -3,7 +3,8 @@
 //registration form validation
 
 $firstname = $lastname = $emailReg = $passwordReg = $repeatPass = "";
-$email = $_POST['email'];
+//$email = $_POST['email'];
+$device = $room = $status = $deviceName = "";
 $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
 
   if (isset($_POST['done'])){
@@ -102,3 +103,12 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
       return $data;
     }
 
+    // device form validation
+    
+    if(isset($_POST['addDevice'])){
+        
+        echo $_POST['deviceName'];
+        echo $_POST['device'];
+        echo $_POST['room'];
+        echo $_POST['status'];
+    }

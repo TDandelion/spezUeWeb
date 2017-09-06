@@ -131,6 +131,73 @@ include 'layout.php';
     </div>
     </div>
  </div>
+    
+<div id="addDeviceView">
+<!--<ol class="breadcrumb" style="visibility: hidden">
+    <li><a href="#" class="homeLink">Home</a></li>
+</ol>-->
+    <div id="addingDeviceForm">
+     <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Gerät hinzufügen</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="form-horizontal" action="">
+                        <input type="text" hidden="" name="geraetetyp_id" id="geraetetyp_id">
+                        <div class="form-group">
+                           <label for="deviceName" class="col-md-6 control-label">
+                             Wie willst du das Gerät benennen? *</label>
+                           <div class="col-md-6">
+                                <input type="text" class="form-control" id="deviceName" name="deviceName" placeholder="" />
+                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>                  
+                           </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="device" class="col-md-6 control-label">
+                             Gerätetyp*</label>
+                            <div class="col-md-6">
+                                 <input type="radio" name="device" id="rauchmelder"<?php if (isset($device) && $device=="Rauchmelder") echo "checked";?> value="Rauchmelder">Rauchmelder<br>
+                                 <input type="radio" name="device" id="rollo"<?php if (isset($device) && $device=="Rollo") echo "checked";?> value="Rollo">Rollo<br>
+                                 <input type="radio" name="device" id="fenster"<?php if (isset($device) && $device=="Fenster") echo "checked";?> value="Fenster">Fenster<br>
+                                 <input type="radio" name="device" id="tuerschloss"<?php if (isset($device) && $device=="Tuerschloss") echo "checked";?> value="Tuerschloss">Tuerschloss<br>
+                                 <input type="radio" name="device" id="bewegungsmelder"<?php if (isset($device) && $device=="Bewegungsmelder") echo "checked";?> value="Bewegungsmelder">Bewegungsmelder<br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="room" class="col-md-6 control-label">
+                            Wo willst du das Gerät hinfügen?*</label>
+                            <div class="col-md-6">
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Kueche") echo "checked";?> value="Kueche">Kueche<br>
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Vorzimmer") echo "checked";?> value="Vorzimmer">Vorzimmer<br>
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Schlafzimmer") echo "checked";?> value="Schlafzimmer">Schlafzimmer<br>
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Wohnzimmer") echo "checked";?> value="Wohnzimmer">Wohnzimmer<br>
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Badezimmer") echo "checked";?> value="Badezimmer">Badezimmer<br>
+                            </div>
+                        </div>                        
+                        <div class="form-group">
+                            <label for="deviceStatus" class="col-md-6 control-label">
+                             Status des Gerätes*</label>
+                            <div class="col-md-6">
+                                 <input type="radio" name="deviceStatus" <?php if (isset($deviceStatus) && $deviceStatus=="On") echo "checked";?> value="On">On<br>
+                                 <input type="radio" name="deviceStatus" <?php if (isset($deviceStatus) && $deviceStatus=="Off") echo "checked";?> value="Off">Off<br>
+                            </div>
+                        </div>                    
+                </div>
+                <div class="panel-footer" style="text-align: right">
+                    <input type="submit" id="saveDevice" name="saveDevice" value="Gerät speichern" class="btn btn-default">
+                    <input name="cancel" value="cancel" class="btn btn-danger">
+                </div>
+                    <p id="deviceMessage"></p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+ </div>    
 
     <!--homeView page-->
 <a name="home" id="home"></a> 
@@ -267,8 +334,9 @@ include 'layout.php';
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
+                <div class="col-md-offset-5 btn-group-lg" role="group" >
+                    <button class="btn btn-default saveChangesBtn">Änderungen speichern</button>
+                    <button class="btn btn-primary addDevice">Gerät hinzufügen</button>
                 </div>
             </div>
 
