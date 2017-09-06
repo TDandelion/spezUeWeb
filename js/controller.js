@@ -13,7 +13,8 @@ $(document).ready(() => {
     $("#time").text(clock);
 
     $(".login").click(function(){
-        checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
+        switchViews("homeView");
+        //checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
          /* Beim Einloggen wieder weißer Hintergrund*/
    });
     $(".registration").click(function(){
@@ -25,7 +26,7 @@ $(document).ready(() => {
         showRooms();
     });
     $("#securitySettingsBtn").click(function () {
-        switchViews("securitySettingsView");
+        showSecurityDevices();
     });
     $(".securityLink").click(function () {
         switchViews("securitySettingsView");
@@ -37,7 +38,10 @@ $(document).ready(() => {
         switchViews("roomSettingsView");
     });
     $(".Kueche").click(function () {
-        switchViews("kitchenView");
+        showKitchenDevices();
+    });
+    $("#kitchenAllBtnOn").click(function(){
+        kitchenEnableAll();
     });
     $(".bedroomLink").click(function () {
         switchViews("bedroomView");

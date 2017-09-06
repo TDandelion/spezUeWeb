@@ -212,7 +212,7 @@ include 'layout.php';
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
                                 <button class="btn btn-default top bathroomLink"><i class="glyphicon glyphicon-tint glyphiconMenu"></i><div class="text-center"><p id="4"></p><br /></button>
-                                <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzuf�gen</button>
+                                <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzufuegen</button>
                             </div>
                         </div>
                     </div>
@@ -230,14 +230,16 @@ include 'layout.php';
         <ol class="breadcrumb">
             <li><a href="#" class="homeLink">Home</a></li>
             <li><a href="#" class="roomLink">Raumverwaltung</a></li>
-            <li class="active">K�che</li>
+            <li class="active">Küche</li>
         </ol>
 
         <div class="container">
+            
             <div class="row">
                 <div class="col-md-offset-5 btn-group-lg" role="group">
-                    <button class="btn btn-default allBtnOn">Alle einschalten</button>
-                    <button class="btn btn-default allBtnOff">Alle ausschalten</button>
+                   <button class="btn btn-default" id="kitchenAllBtnOn">Alle einschalten</button>
+<!--                        <input type="checkbox" id="kitchenAllBtnOn">Alle einschalten-->
+                    <button class="btn btn-default" id="kitchenAllBtnOff">Alle ausschalten</button>
                 </div>
             </div>
 
@@ -245,7 +247,7 @@ include 'layout.php';
                 <div class="col-md-3 col-sm-3 col-xs-3 text-center">
 
                     <br />
-                    <h1>K�che</h1>
+                    <h1>Küche</h1>
                     <br />
                     <br />
                     <i class="glyphicon glyphicon-cutlery glyphiconMenu" style="font-size:100px"></i>
@@ -255,43 +257,8 @@ include 'layout.php';
                     <br />
                     <div class="table-responsive">
                         <table class="table table-striped">
-                            <tbody id="kitchenTable">
-                                <tr>
-                                    <td><div class="label label-default menuLabel">Bewegungsmelder</div></td>
-                                    <td><input type="radio" name="kitchenOn" id="inlineRadio1" value="on"> on </td>
-                                    <td><input type="radio" name="kitchenOff" id="inlineRadio2" value="off"> off</td>
-                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
-                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
-                                </tr>
-                                <tr>
-                                    <td><div class="label label-default menuLabel">Fenster</div></td>
-                                    <td><input type="radio" name="kitchenOn" id="inlineRadio1" value="on"> on </td>
-                                    <td><input type="radio" name="kitchenOff" id="inlineRadio2" value="off"> off</td>
-                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
-                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
-                                </tr>
-                                <tr>
-                                    <td><div class="label label-default menuLabel">Rauchmelder</div></td>
-                                    <td><input type="radio" name="kitchenOn" id="inlineRadio1" value="on"> on </td>
-                                    <td><input type="radio" name="kitchenOff" id="inlineRadio2" value="off"> off</td>
-                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
-                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
-                                </tr>
-                                <tr>
-                                    <td><div class="label label-default menuLabel">Rollos</div></td>
-                                    <td><input type="radio" name="kitchenOn" id="inlineRadio1" value="on"> on </td>
-                                    <td><input type="radio" name="kitchenOff" id="inlineRadio2" value="off"> off</td>
-                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
-                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
-                                </tr>
-                                <tr>
-                                    <td><div class="label label-default menuLabel">T�rschlo�</div></td>
-                                    <td><input type="radio" name="kitchenOn" id="inlineRadio1" value="on"> on </td>
-                                    <td><input type="radio" name="kitchenOff" id="inlineRadio2" value="off"> off</td>
-                                    <td><input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="benutzerdefiniert"> benutzerdefiniert</td>
-                                    <td><button type="button" class="btn btn-default">Mehr</button></td>
-                                </tr>
-                            </tbody>
+                            <thead></thead>
+                            <tbody id="kitchenDevicesTable"></tbody>
                         </table>
                     </div>
                 </div>
@@ -301,7 +268,7 @@ include 'layout.php';
             </div>
             <div class="row">
                 <div class="col-md-offset-7 col-md-2">
-                    <button class="btn btn-default btn-lg saveChangesBtn">�nderungen speichern</button>
+                    <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
                 </div>
             </div>
 
@@ -656,16 +623,16 @@ include 'layout.php';
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="row mainMenu">
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-defaults top"><i class="glyphicon glyphicon-align-justify glyphiconMenu"></i><br />Rollos</button>
-                                <button class="btn btn-default"><i class="glyphicon glyphicon-fire glyphiconMenu"></i><br />Rauchmelder</button>
+                                <button class="btn btn-default top"><i class="glyphicon glyphicon-fire glyphiconMenu"></i><p id="device0"></p></button>
+                                <button class="btn btn-default"><i class="glyphicon glyphicon-align-justify glyphiconMenu"></i><p id="device1"></button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default"  id="windowBtn"><i class="glyphicon glyphicon-cog glyphiconMenu"></i><br />Fenster</button>
-                                <button class="btn btn-default bottom"><i class=" glyphicon glyphicon-lamp glyphiconMenu"></i><br />Logo</button>
+                                <button class="btn btn-default"  id="windowBtn"><i class="glyphicon glyphicon-cog glyphiconMenu"></i><p id="device2"></p></button>
+                                <button class="btn btn-default bottom"><i class=" glyphicon glyphicon-lock glyphiconMenu"></i><p id="device3"></p></button>
                             </div>
                             <div class="col-md-3 col-sm-4 col-xs-4 rounded-button">
-                                <button class="btn btn-default top"><i class="glyphicon glyphicon-lock glyphiconMenu"></i><br />T�rschloss</button>
-                                <button class="btn btn-default"><i class="glyphicon glyphicon-refresh glyphicon-facetime-video glyphiconMenu"></i><br />Bewegungsmelder</button>
+                                <button class="btn btn-default top"><i class="glyphicon glyphicon-refresh glyphicon-facetime-video glyphiconMenu"></i><p id="device4"></p></button>
+                                <button class="btn btn-default"><i class="glyphicon glyphicon-plus-sign glyphiconMenu"></i><br />hinzufuegen</button>
                             </div>
                         </div>
                     </div>

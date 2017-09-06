@@ -83,9 +83,41 @@ function showRooms(){
     $.ajax({
       url: "backend/menu.php",
       type: "POST",
+      data:{
+          rooms: 1
+      },
       success: getRooms,
       error: function(err){
           alert('error');
       }
     });  
 }
+
+function showSecurityDevices(){
+    $.ajax({
+        url: "backend/menu.php",
+        type: "POST",
+        data:{
+            devices: 1
+        },
+        success: getDevices,
+        error: function(err){
+            alert('error');
+        }
+    });
+}
+
+function showKitchenDevices(){
+    $.ajax({
+        url: "backend/menu.php",
+        type: "POST",
+        data:{
+            kitchenDevices: 1
+        },
+        success: getKitchenDevices,
+        error: function(err){
+            alert('error');
+        }
+    });
+}
+
