@@ -1,13 +1,39 @@
 <?php
+  session_start();
+   
+$pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
+//  $sql = "SELECT * FROM user";
+//
+//  foreach ($pdo->query($sql) as $row) {
+//     echo $row['email']. "<br />";
+//     echo $row['name']."<br />";
+//     echo $row['password']."<br />";
+//  }
 
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+//login form validation & cookies setting
 
-  $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
-  $sql = "SELECT * FROM user";
+ $email = $_POST['email'];
+ $password = $_POST['password'];
+ 
+  
+ $statement = $pdo->prepare("SELECT * FROM user WHERE email = :email");
+ 
 
-  foreach ($pdo->query($sql) as $row) {
-     echo $row['email']. "<br />";
-     echo $row['name']."<br />";
-     echo $row['password']."<br />";
-  };
+ $result = $statement->execute(array('email' => $email));
+ $user = $statement->fetch();
+ 
+ 
+  if ($user !== false && $password == $user['password']) {
+    $_SESSION['userid'] = $user['user_id'];
+    $name = $user['name'];
+         if(isset($_POST['remember'])){
+            setcookie('email', $email, time()+60*60*24);
+            setcookie('password', $password, time()+60*60*24);
+        }else{
+            setcookie('email', $email, time()-60*60*24);
+            setcookie('password', $password, time()-60*60*24);
+        }
+        echo $name;
+  } else {
+    return false;
+    }

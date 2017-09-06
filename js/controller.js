@@ -1,5 +1,5 @@
 var views = ["homeView", "registrationView", "loginView", "roomSettingsView", "securitySettingsView", "kitchenView", "bedroomView",
-    "bathroomView", "hallView", "livingRoomView", "windowView"];
+    "bathroomView", "hallView", "livingRoomView", "windowView", "addDeviceView"];
 //Date
 let date = new Date().toLocaleDateString();
 let clock = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "numeric" });
@@ -12,23 +12,21 @@ $(document).ready(() => {
     $("#date").text(date);
     $("#time").text(clock);
 
-    $(".login").click(function () {
-        $("body").css("background-color", "white"); /* Beim Einloggen wieder weißer Hintergrund*/
-        checkLogin($("#email").val(), $("#password").val());
+    $(".login").click(function(){
         switchViews("homeView");
-    });
+        //checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
+         /* Beim Einloggen wieder weißer Hintergrund*/
+   });
     $(".registration").click(function(){
        switchViews("registrationView");
-       $('.error').hide();
     });
-    $(".logout").click(function () {
-        switchViews("loginView");
-    });
+    $("#logout").click(logout);
+        
     $("#roomSettingsBtn").click(function () {
-        switchViews("roomSettingsView");
+        showRooms();
     });
     $("#securitySettingsBtn").click(function () {
-        switchViews("securitySettingsView");
+        showSecurityDevices();
     });
     $(".securityLink").click(function () {
         switchViews("securitySettingsView");
@@ -39,8 +37,11 @@ $(document).ready(() => {
     $(".roomLink").click(function () {
         switchViews("roomSettingsView");
     });
-    $(".kitchenLink").click(function () {
-        switchViews("kitchenView");
+    $(".Kueche").click(function () {
+        showKitchenDevices();
+    });
+    $("#kitchenAllBtnOn").click(function(){
+        kitchenEnableAll();
     });
     $(".bedroomLink").click(function () {
         switchViews("bedroomView");
@@ -68,7 +69,15 @@ $(document).ready(() => {
     });  
     
     $("#register").click(function(){
-        saveToDatabase();
+        registerUserToDatabase();
+    });
+    
+    $(".addDevice").click(function(){
+        switchViews("addDeviceView");
+    });
+    
+    $("#saveDevice").click(function(){
+        addDeviceToARoom();
     });
 
     //not final

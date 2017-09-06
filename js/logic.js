@@ -40,13 +40,64 @@ function showWeather(data){
 };
 
 function login(data){
-  console.log(data);
+  if(!data){
+      $("#login_message").html("<div class='alert alert-danger'>Login failed. Password or E-mail not correct</div>");
+      //$("p").addClass("alert alert-warning").css("color", "red");
+      switchViews("loginView");
+  } else{
+      $("#welcome_msg").text("Hello " + data);
+      $("body").css("background-color", "white");
+      switchViews("homeView");
+  }    
 }
 
 function showAlert() {
     alert('Ihre Änderungen wurden erfolgreich gespeichert');
 }
 
+function getRooms(data){
+    //console.log(data);
+    var obj = JSON.parse(data);
+    obj.forEach(function(value, ind){
+        console.log(ind);
+       $("#" + ind).text(value.raum_name);
+    });
+    switchViews('roomSettingsView');
+}
 
+function getDevices(data){
+    //console.log(data);
+    var devices = JSON.parse(data);
+    devices.forEach(function(value, ind){
+        console.log(ind);
+        $("#device" + ind).text(value.geraet_name);
+    });
+    switchViews("securitySettingsView");
+}
 
+function getKitchenDevices(data){
+    $("#kitchenDevicesTable").empty();
+    var devices = JSON.parse(data);
+    devices.forEach(function(val, ind){
+       //console.log(val.geraetetyp_name);
+       $("#kitchenDevicesTable").append("<tr><td>" + val.geraetetyp_name + "</td><td>" + 
+               "<input type='radio' name='kitchen"+ ind +"' id='kitchenOn"+ind+"' value='on'>on </td><td>" +
+               "<input type='radio' name='kitchen"+ ind +"' id='kitchenOff"+ind+"' value='off'>off</td><td>" +
+               "<button type='button' class='btn btn-default' id='kitchenMore"+ind+"'>Mehr</button></td></tr>");
+    });
+    switchViews("kitchenView");
+}
 
+function addDevice(data){
+    console.log(data);
+}
+
+var checked = false;
+function kitchenEnableAll(index){
+    var selectOn = document.getElementsByName('kitchen'); // all buttons with kitchenIndex!! are i the same group!!
+    checked = document.getElementById('kitchenAllBtnOn');
+    
+    for(var i=0; i < selectOn.length; i++){
+        selectOn[i].checked = checked;
+    };
+}

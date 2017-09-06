@@ -138,3 +138,7 @@ td span {
 .error{
       color: red;
 }
+
+#welcome_msg{
+    margin-left: 100px;
+}
