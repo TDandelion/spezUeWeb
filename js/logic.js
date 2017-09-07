@@ -48,7 +48,7 @@ function login(data){
       $("#welcome_msg").text("Hello " + data);
       $("body").css("background-color", "white");
       switchViews("homeView");
-  }    
+  }
 }
 
 function showAlert() {
@@ -78,12 +78,13 @@ function getDevices(data){
 function getKitchenDevices(data){
     $("#kitchenDevicesTable").empty();
     var devices = JSON.parse(data);
+    console.log(data);
     devices.forEach(function(val, ind){
-       //console.log(val.geraetetyp_name);
-       $("#kitchenDevicesTable").append("<tr><td>" + val.geraetetyp_name + "</td><td>" + 
-               "<input type='radio' name='kitchen"+ ind +"' id='kitchenOn"+ind+"' value='on'>on </td><td>" +
+       $("#kitchenDevicesTable").append("<tr><td>" + val.geraetetyp_name + "</td><td>" +
+              "<input type='radio' name='kitchen"+ ind +"' id='kitchenOn"+ind+"' value='on'>on </td><td>" +
                "<input type='radio' name='kitchen"+ ind +"' id='kitchenOff"+ind+"' value='off'>off</td><td>" +
                "<button type='button' class='btn btn-default' id='kitchenMore"+ind+"'>Mehr</button></td></tr>");
+        val.fk_status_id == 1 ? document.getElementById("kitchenOn"+ind).checked = true : document.getElementById("kitchenOff"+ind).checked = true;
     });
     switchViews("kitchenView");
 }
@@ -93,11 +94,18 @@ function addDevice(data){
 }
 
 var checked = false;
-function kitchenEnableAll(index){
-    var selectOn = document.getElementsByName('kitchen'); // all buttons with kitchenIndex!! are i the same group!!
-    checked = document.getElementById('kitchenAllBtnOn');
-    
-    for(var i=0; i < selectOn.length; i++){
-        selectOn[i].checked = checked;
-    };
+function kitchenEnableAll(){
+    enableAllDevices('Küche');
+}
+
+function kitchenDisableAll(index){
+    disableAllDevices('Küche');
+}
+
+function successAllDevices(data) {
+      showKitchenDevices();
+}
+
+function successAllDevicesDisabled(data){
+      showKitchenDevices();
 }

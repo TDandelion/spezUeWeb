@@ -29,7 +29,7 @@ function registerUserToDatabase(){
     var emailReg = $("#emailReg").val();
     var passwordReg = $("#passwordReg").val();
     var repeatPass = $("#repeatpassword").val();
-    
+
     $.ajax({
         type: "POST",
         url: "backend/validation.php",
@@ -49,8 +49,8 @@ function registerUserToDatabase(){
             $("#passwordReg").val('');
             $("#repeatpassword").val('');
             $("#message").html(data);
-            $("p").addClass("alert alert-warning").css("color", "red");         
-            }, 
+            $("p").addClass("alert alert-warning").css("color", "red");
+            },
         error: function(err) {
             alert('error');
             $("#message").html();
@@ -90,7 +90,7 @@ function showRooms(){
       error: function(err){
           alert('error');
       }
-    });  
+    });
 }
 
 function showSecurityDevices(){
@@ -126,7 +126,7 @@ function addDeviceToARoom(){
     var device = $("input[name=device]:checked", "#addingDeviceForm").val();
     var room = $("input[name=room]:checked", "#addingDeviceForm").val();
     var status = $("input[name=deviceStatus]:checked", "#addingDeviceForm").val();
-    
+
     $.ajax({
         url: "backend/validation.php",
         type: "POST",
@@ -143,4 +143,26 @@ function addDeviceToARoom(){
         }
     })
 }
+  function enableAllDevices(room){
+    $.ajax({
+        type: "POST",
+        url: "backend/menu.php",
+        data: {
+            room: room
+        },
+        success: successAllDevices,
+        error: function(err){ console.log(err);}
+    });
+  }
 
+ function disableAllDevices(room){
+    $.ajax({
+        type: "POST",
+        url: "backend/menu.php",
+        data: {
+            false: room
+        },
+        success: successAllDevicesDisabled,
+        error: function(err){ console.log(err);}
+    });
+  }

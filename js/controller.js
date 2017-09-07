@@ -21,7 +21,7 @@ $(document).ready(() => {
        switchViews("registrationView");
     });
     $("#logout").click(logout);
-        
+
     $("#roomSettingsBtn").click(function () {
         showRooms();
     });
@@ -42,6 +42,9 @@ $(document).ready(() => {
     });
     $("#kitchenAllBtnOn").click(function(){
         kitchenEnableAll();
+    });
+    $("#kitchenAllBtnOff").click(function(){
+        kitchenDisableAll();
     });
     $(".bedroomLink").click(function () {
         switchViews("bedroomView");
@@ -66,20 +69,21 @@ $(document).ready(() => {
     });
     $(".home").click(function () {
         switchViews("homeView");
-    });  
-    
+    });
+
     $("#register").click(function(){
         registerUserToDatabase();
     });
-    
+
     $(".addDevice").click(function(){
         switchViews("addDeviceView");
     });
-    
+
     $("#saveDevice").click(function(){
         addDeviceToARoom();
     });
 
+  
     //not final
     /*$("button").click(function(){
       var getClass = $(this).attr("id");
