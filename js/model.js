@@ -49,8 +49,13 @@ function registerUserToDatabase(){
             $("#passwordReg").val('');
             $("#repeatpassword").val('');
             $("#message").html(data);
+<<<<<<< HEAD
             $("p").addClass("alert alert-warning").css("color", "red");
             },
+=======
+            $("#message").addClass("alert alert-warning").css("color", "red");         
+            }, 
+>>>>>>> de29b4022e46510823e1943f9abdaaa5f084e4c2
         error: function(err) {
             alert('error');
             $("#message").html();
@@ -123,7 +128,7 @@ function showKitchenDevices(){
 
 function addDeviceToARoom(){
     var deviceName = $("#deviceName").val();
-    var device = $("input[name=device]:checked", "#addingDeviceForm").val();
+    var dev = $("input[name=device]:checked", "#addingDeviceForm").val();
     var room = $("input[name=room]:checked", "#addingDeviceForm").val();
     var status = $("input[name=deviceStatus]:checked", "#addingDeviceForm").val();
 
@@ -132,16 +137,31 @@ function addDeviceToARoom(){
         type: "POST",
         data:{
           addDevice: 1,
-          name: deviceName,
-          device:device,
-          raum: room,
+          deviceName: deviceName,
+          device: dev,
+          room: room,
           status: status
         },
         success: addDevice,
         error: function(err){
             alert("error");
         }
-    })
+    });
+}
+
+function showAllWindows(){
+    $.ajax({
+        url: "backend/menu.php",
+        async: false,
+        type: "POST",
+        data:{
+            showWindows: 1
+        },
+        success: getWindows,
+        error: function(err){
+            alert("error");
+        }
+    });
 }
   function enableAllDevices(room){
     $.ajax({

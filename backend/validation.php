@@ -3,18 +3,17 @@
 //registration form validation
 
 $firstname = $lastname = $emailReg = $passwordReg = $repeatPass = "";
-//$email = $_POST['email'];
-$device = $room = $status = $deviceName = "";
+$dev = $room = $status = $deviceName = "";
 $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
 
   if (isset($_POST['done'])){
      
       $fk_haus_id = 1;
-      $firstnameError = "Please enter firstname! <br>";
-      $lastnameError = "Please enter lastname! <br>";
-      $emailError = "Please enter email! <br>"; 
-      $passwordError = "Please enter password! <br>";
-      $repeatError = "Password does not match. Please re-type your password!<br>";
+      $firstnameError = "Bitte Vorname eingeben! <br>";
+      $lastnameError = "Bitte Lastname eingeben! <br>";
+      $emailError = "Bitte Email eingeben! <br>"; 
+      $passwordError = "Bitte Passwort eingeben! <br>";
+      $repeatError = "Die Passwörter stimmen nicht überein. Bitte probieren Sie noch mal!<br>";
             
       $errors = 0;
 
@@ -26,7 +25,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
             // check if name only contains letters and whitespace
             if (!preg_match("/^[a-zA-Z ]*$/",$firstname)) {
                 $errors++;
-                $firstnameError = "Only letters and white spaces in name-field allowed <br>";
+                $firstnameError = "Nur Buchstaben und Leerzeichen in Namenfeld erlaubt!<br>";
               echo $firstnameError;
             };
         };
@@ -38,7 +37,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
            $lastname = test_input($_POST['lastname']);
             if (!preg_match("/^[a-zA-Z ]*$/",$lastname)) {
                 $errors++;
-                $lastnameError = "Only letters and white spaces in lastn-name field allowed <br>";
+                $lastnameError = "Nur Buchstaben und Leerzeichen in Lastnamenfeld erlaubt!<br>";
                 echo $lastnameError;
             }; 
         };
@@ -51,7 +50,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
            // check if e-mail address is well-formed
            if (!filter_var($emailReg, FILTER_VALIDATE_EMAIL)) {
              $errors ++;
-             $emailError = "Invalid email format <br>";
+             $emailError = "Falsches E-Mail Format. E-Mail bitte noch mal eingeben.<br>";
              echo $emailError;
            };           
         };        
@@ -62,9 +61,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
         }else{
             $passwordReg = $_POST['passwordReg'];
             //check, that the length is at least 4 char long!
-            if(strlen($passwordReg) < 4){
+            if(strlen($passwordReg) < 7){
                 $errors++;
-                $passwordError = "Password has to be at least 4 charachters long!<br>";
+                $passwordError = "Ihr Passwort muss mindestens 7 Zeichen lang sein<br>";
                 echo $passwordError;
                 };
         }; 
@@ -106,9 +105,60 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
     // device form validation
     
     if(isset($_POST['addDevice'])){
+        $deviceNameError = "Bitte alle Felder ausfüllen!";
+        $errors = 0;
         
-        echo $_POST['deviceName'];
-        echo $_POST['device'];
-        echo $_POST['room'];
-        echo $_POST['status'];
+        if(empty($_POST['deviceName'])){
+            $errors ++;
+        }else{
+            $deviceName = test_input($_POST['deviceName']);
+            if (!preg_match("/^[a-zA-Z0-9 ]*$/",$deviceName)) {
+                $errors++;
+                $deviceNameError = "Nur Buchstaben, Nummern und Leerzeichen im Namensfeld erlaubt!<br>";            
+            }; 
+        }
+        if(empty($_POST['device'])){
+            $errors ++;
+        }else{
+            $device = $_POST['device']; 
+        } 
+        
+        if(empty($_POST['room'])){
+            $errors ++;
+        }else{
+            $room = $_POST['room']; 
+        } 
+        
+        if(empty($_POST['status'])){
+            $errors ++;
+        }else{
+            $status = $_POST['status']; 
+        }
+        
+        if($errors == null){ 
+                
+          $deviceId = "SELECT geraet_id FROM geraet where geraet_name ='{$device}'";
+            foreach($pdo->query($deviceId) as $row){
+                $deviceIdResult = $row['geraet_id'];
+            }
+            //echo var_dump($queriedIdResult);     
+          $roomId = "SELECT raum_id FROM raum where raum_name ='{$room}'";
+            foreach($pdo->query($roomId) as $row){
+                $roomIdResult = $row['raum_id'];
+            }
+          $statusId = "SELECT id FROM status where status ='{$status}'";
+            foreach($pdo->query($statusId) as $row){
+                $statusIdResult = $row['id'];
+            }
+
+          $sql = "INSERT INTO geraetetyp(geraetetyp_name, fk_geraet_id, fk_raum_id, fk_status_id) values ('{$deviceName}','{$deviceIdResult}', '{$roomIdResult}', '{$statusIdResult}')";
+          //echo var_dump($sql);
+          $result = $pdo->query($sql);
+            
+            if($result){
+                echo "Gerät hinzugefügt!";              
+            }
+        }else{
+            echo $deviceNameError;
+        }
     }

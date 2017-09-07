@@ -13,8 +13,8 @@ $(document).ready(() => {
     $("#time").text(clock);
 
     $(".login").click(function(){
-        switchViews("homeView");
-        //checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
+        //switchViews("homeView");
+        checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
          /* Beim Einloggen wieder weißer Hintergrund*/
    });
     $(".registration").click(function(){
@@ -82,6 +82,15 @@ $(document).ready(() => {
     $("#saveDevice").click(function(){
         addDeviceToARoom();
     });
+    
+    $("#backToKitchen").click(function(){
+        showKitchenDevices();
+        switchViews("kitchenView");
+    });
+    $("#windowBtn").click(function(){
+       showAllWindows();
+    });
+    
 
   
     //not final
