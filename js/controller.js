@@ -88,9 +88,6 @@ $(document).ready(() => {
        showAllWindows();
     });
     
-    $("#kontrast").click(function(){
-        
-    });
 
     //not final
     /*$("button").click(function(){

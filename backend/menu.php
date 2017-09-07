@@ -32,6 +32,7 @@ if(isset($_POST['kitchenDevices'])){
 
 if(isset($_POST['showWindows'])){
     $sql = $pdo->prepare("SELECT geraetetyp_name, fk_raum_id from geraetetyp where fk_geraet_id=3 ORDER BY geraetetyp_name ASC ");
+    //$stm = $pdo->prepare("SELECT raum_name from raum where fk_raum_id");
     $sql->execute();
     $result=$sql->fetchAll();
     print json_encode($result);

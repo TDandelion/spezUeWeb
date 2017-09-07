@@ -4,6 +4,7 @@ include 'layout.php';
 
 
  ?>
+
 <!--loginView page-->
 <div id="loginView">
     <div id="loginForm">
@@ -835,6 +836,6 @@ include 'layout.php';
 
     </div>
  </div><!--end of windowView page-->
-
+</div>
 </body>
 </html>
