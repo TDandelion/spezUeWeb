@@ -9,6 +9,15 @@ function getWeather(){
   });
 }
 
+function checkIfLoggedIn() {
+  $.ajax({
+      type: "POST",
+      url: "backend/login.php",
+      success: redirectToHome,
+      error: function(err){ console.log(err);}
+  });
+  }
+
 function checkLogin(email, password, remember) {
 $.ajax({
     type: "POST",
@@ -16,7 +25,7 @@ $.ajax({
     data: {
         email: email,
         password: password,
-        remember: true,
+        remember: remember,
     },
     success: login,
     error: function(err){ console.log(err);}
@@ -49,13 +58,9 @@ function registerUserToDatabase(){
             $("#passwordReg").val('');
             $("#repeatpassword").val('');
             $("#message").html(data);
-<<<<<<< HEAD
-            $("p").addClass("alert alert-warning").css("color", "red");
+            $("#message").addClass("alert alert-warning").css("color", "red");
             },
-=======
-            $("#message").addClass("alert alert-warning").css("color", "red");         
-            }, 
->>>>>>> de29b4022e46510823e1943f9abdaaa5f084e4c2
+
         error: function(err) {
             alert('error');
             $("#message").html();
@@ -185,4 +190,18 @@ function showAllWindows(){
         success: successAllDevicesDisabled,
         error: function(err){ console.log(err);}
     });
+  }
+
+  function deletethisDevice(id){
+      $.ajax({
+        url: "backend/admin.php",
+        type: "POST",
+        data:{
+            id: id
+        },
+        success: successfullyDeleted,
+        error: function(err){
+            alert('error');
+        }
+      });
   }

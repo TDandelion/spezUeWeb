@@ -6,6 +6,7 @@ let clock = new Date().toLocaleTimeString('en-GB', { hour: "numeric", minute: "n
 
 $(document).ready(() => {
 
+    checkIfLoggedIn();
     switchViews("loginView");
     getWeather();
 
@@ -14,7 +15,7 @@ $(document).ready(() => {
 
     $(".login").click(function(){
         //switchViews("homeView");
-        checkLogin($("#email").val(), $("#password").val(), $("#remember").is("checked") );
+        checkLogin($("#email").val(), $("#password").val(), $("#remember").is(":checked") );
          /* Beim Einloggen wieder weißer Hintergrund*/
    });
     $(".registration").click(function(){
@@ -82,27 +83,20 @@ $(document).ready(() => {
     $("#saveDevice").click(function(){
         addDeviceToARoom();
     });
-    
+
     $("#backToKitchen").click(function(){
         showKitchenDevices();
         switchViews("kitchenView");
     });
     $("#windowBtn").click(function(){
-       showAllWindows();
+        showAllWindows();
     });
-    
+    $("table").on('click', 'tbody tr', function(){
+        var confirmOnDelete = confirm('Dieses Gerät löschen?');
+        if(confirmOnDelete){
+            deletethisDevice(this.id);
+        }
 
-  
-    //not final
-    /*$("button").click(function(){
-      var getClass = $(this).attr("id");
-      switch(getClass){
-        case overview: openOverviewBox()
-                      break;
-        case status: openStatusBox()
-                      break;
-        default: break;
-      }
-    });*/
+    });
 
 });

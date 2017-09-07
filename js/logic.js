@@ -40,15 +40,20 @@ function showWeather(data){
 };
 
 function login(data){
+  console.log(data);
   if(!data){
       $("#login_message").html("<div class='alert alert-danger'>Login failed. Password or E-mail not correct</div>");
       //$("p").addClass("alert alert-warning").css("color", "red");
       switchViews("loginView");
   } else{
-      $("#welcome_msg").text(displayMsg() + data + "! Wellcome to SmartHome!");
-      $("body").css("background-color", "white");
-      switchViews("homeView");
+    setHomeView(data);
   }
+}
+
+function setHomeView(data){
+  $("#welcome_msg").text(displayMsg() + data + "! Welcome to SmartHome!");
+  $("body").css("background-color", "white");
+  switchViews("homeView");
 }
 
 function showAlert() {
@@ -78,12 +83,11 @@ function getDevices(data){
 function getKitchenDevices(data){
     $("#kitchenDevicesTable").empty();
     var devices = JSON.parse(data);
-    console.log(data);
     devices.forEach(function(val, ind){
-       $("#kitchenDevicesTable").append("<tr><td>" + val.geraetetyp_name + "</td><td>" +
+       $("#kitchenDevicesTable").append("<tr id='" + val.geraetetyp_id + "'><td>" + val.geraetetyp_name + "</td><td>" +
               "<input type='radio' name='kitchen"+ ind +"' id='kitchenOn"+ind+"' value='on'>on </td><td>" +
                "<input type='radio' name='kitchen"+ ind +"' id='kitchenOff"+ind+"' value='off'>off</td><td>" +
-               "<button type='button' class='btn btn-default' id='kitchenMore"+ind+"'>Mehr</button></td></tr>");
+               "<button class='btn btn-xs btn-danger deleteDevice' ><i class='glyphicon glyphicon-trash'></i> Delete</button></td></tr>");
         val.fk_status_id == 1 ? document.getElementById("kitchenOn"+ind).checked = true : document.getElementById("kitchenOff"+ind).checked = true;
     });
     switchViews("kitchenView");
@@ -101,12 +105,20 @@ function getWindows(data){
 }
 
 function addDevice(data){
-    $("#addDevice_message").html(data);
-    $("#addDevice_message").addClass("alert alert-warning").css("color", "red");
+  console.log(data);
+    if(data == 200){
+      showKitchenDevices();
+      $("#addDevice_message").html('Gerät erfolgreich hinzugefügt');
+    } else {
+      $("#addDevice_message").html(data);
+      $("#addDevice_message").addClass("alert alert-warning").css("color", "red");
+    }
+
+
 }
 
 var checked = false;
-<<<<<<< HEAD
+
 function kitchenEnableAll(){
     enableAllDevices('Küche');
 }
@@ -122,15 +134,6 @@ function successAllDevices(data) {
 function successAllDevicesDisabled(data){
       showKitchenDevices();
 }
-=======
-function kitchenEnableAll(index){
-    var selectOn = document.getElementsByName('kitchen'); // all buttons with kitchenIndex!! are i the same group!!
-    checked = document.getElementById('kitchenAllBtnOn');
-    
-    for(var i=0; i < selectOn.length; i++){
-        selectOn[i].checked = checked;
-    };
-}
 
 function displayMsg(){
     var today = new Date();
@@ -144,4 +147,16 @@ function displayMsg(){
           return 'Guten Abend, ';
         };
 }
->>>>>>> de29b4022e46510823e1943f9abdaaa5f084e4c2
+
+
+function redirectToHome(data){
+  if(data === ''){
+    return;
+  } else {
+    setHomeView(data);
+  }
+}
+
+function successfullyDeleted(data){
+    showKitchenDevices();
+}

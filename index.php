@@ -28,7 +28,7 @@ include 'layout.php';
                             <input type="checkbox" name="remember" id="remember"> Remember me
                         </div>
                         <br>
-                    </div><!--end of loginForm-->                          
+                    </div><!--end of loginForm-->
                         <button class="btn btn-primary btn-block login" value="login">Login</button>
                         <button class="btn btn-default btn-block registration">New? Register now</button>
               </div><!--end of form action-->
@@ -80,7 +80,7 @@ include 'layout.php';
                            <div class="col-md-8">
                                 <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Max" />
                                 <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>
-                                                
+
                            </div>
                         </div>
                         <div class="form-group">
@@ -88,7 +88,7 @@ include 'layout.php';
                              Nachname*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Mustermann" />
-                               <span class="error"><?php if(isset($errors['lastnameError'])){ echo $errors['lastnameError'];}?></span><br>                               
+                               <span class="error"><?php if(isset($errors['lastnameError'])){ echo $errors['lastnameError'];}?></span><br>
                             </div>
                         </div>
                         <div class="form-group">
@@ -115,12 +115,12 @@ include 'layout.php';
                                 <span class="error"><?php if(isset($errors['repeatError'])){ echo $errors['repeatError'];}?></span><br>
                             </div>
                         </div>
-                    
+
                 </div>
                 <div class="panel-footer" style="text-align: right">
                     <input type="submit" id="register" name="register" value="registrieren" class="btn btn-default">
                     <input name="cancel" value="abbrechen" id="cancel" class="btn btn-danger">
-                </div>             
+                </div>
                 </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@ include 'layout.php';
     </div>
     </div>
  </div><!--end of registrationView page-->
- <!--addDeviceView page-->   
+ <!--addDeviceView page-->
 <div id="addDeviceView">
     <div id="addingDeviceForm">
      <div class="container">
@@ -147,7 +147,7 @@ include 'layout.php';
                              Wie willst du das Gerät benennen? *</label>
                            <div class="col-md-6">
                                 <input type="text" class="form-control" id="deviceName" name="deviceName" placeholder="" />
-                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>                  
+                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>
                            </div>
                         </div>
                         <div class="form-group">
@@ -163,15 +163,15 @@ include 'layout.php';
                         </div>
                         <div class="form-group">
                             <label for="room" class="col-md-6 control-label">
-                            Wo willst du das Gerät hinfügen?*</label>
+                            Wo willst du das Gerät hinzufügen?*</label>
                             <div class="col-md-6">
                                  <input type="radio" name="room" <?php if (isset($room) && $room=="Kueche") echo "checked";?> value="Kueche">Kueche<br>
-                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Vorzimmer") echo "checked";?> value="Vorzimmer">Vorzimmer<br>
+                                 <!--<input type="radio" name="room" <?php if (isset($room) && $room=="Vorzimmer") echo "checked";?> value="Vorzimmer">Vorzimmer<br>
                                  <input type="radio" name="room" <?php if (isset($room) && $room=="Schlafzimmer") echo "checked";?> value="Schlafzimmer">Schlafzimmer<br>
                                  <input type="radio" name="room" <?php if (isset($room) && $room=="Wohnzimmer") echo "checked";?> value="Wohnzimmer">Wohnzimmer<br>
-                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Badezimmer") echo "checked";?> value="Badezimmer">Badezimmer<br>
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Badezimmer") echo "checked";?> value="Badezimmer">Badezimmer<br>-->
                             </div>
-                        </div>                        
+                        </div>
                         <div class="form-group">
                             <label for="deviceStatus" class="col-md-6 control-label">
                              Status des Gerätes*</label>
@@ -179,7 +179,7 @@ include 'layout.php';
                                  <input type="radio" name="deviceStatus" <?php if (isset($deviceStatus) && $deviceStatus=="On") echo "checked";?> value="On">On<br>
                                  <input type="radio" name="deviceStatus" <?php if (isset($deviceStatus) && $deviceStatus=="Off") echo "checked";?> value="Off">Off<br>
                             </div>
-                        </div>                    
+                        </div>
                 </div>
                 <div class="panel-footer" style="text-align: right">
                     <input type="submit" id="saveDevice" name="saveDevice" value="Gerät speichern" class="btn btn-default">
@@ -192,10 +192,10 @@ include 'layout.php';
         </div>
     </div>
     </div>
- </div><!--end of addDeviceView page-->     
+ </div><!--end of addDeviceView page-->
 <!--homeView page-->
-<a name="home" id="home"></a> 
-<div class="container"> 
+<a name="home" id="home"></a>
+<div class="container">
      <div id="homeView">
          <ol class="breadcrumb" style="visibility: hidden">
              <li><a href="#" class="homeLink">Home</a></li>
@@ -254,7 +254,7 @@ include 'layout.php';
         <div class="menu">
             <div class="row">
                 <div class="col-md-4 col-sm-4 hidden-xs">
-                    <h2>Raumwervaltung</h2>
+                    <h2>Raumverwaltung</h2>
                     <img img class="pic" src="images/d43227b3e270cad5505383e0d8c4ee71_black.jpg" alt=""/>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -413,7 +413,7 @@ include 'layout.php';
 </div> <!--end of bedroomView page-->
 <!--start of bathroomView page-->
 <div id="bathroomView">
-    <div class="container">        
+    <div class="container">
     <ol class="breadcrumb">
         <li><a href="#" class="homeLink">Home</a></li>
         <li><a href="#" class="roomLink">Raumverwaltung</a></li>
@@ -701,7 +701,7 @@ include 'layout.php';
 </div> <!--end of securitySettingsView page-->
 <!--start of windowView page-->
 <div id="windowView">
-    <div class="container">            
+    <div class="container">
     <ol class="breadcrumb">
         <li><a href="#" class="homeLink">Home</a></li>
         <li><a href="#" class="securityLink">Sicherheit</a></li>
@@ -728,18 +728,18 @@ include 'layout.php';
             <div class="col-md-7 col-sm-6 col-sm-6">
                 <br />
                 <br />
-                
+
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead id="windowsNames">
-                            
+
                         </thead>
                         <tbody id="windowsTable">
-                            
+
                         </tbody>
                     </table>
                 </div>
-                
+
 <!--                <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -830,7 +830,7 @@ include 'layout.php';
         </div>
         <div class="row">
             <div class="col-md-offset-7 col-md-2">
-                <button class="btn btn-default btn-lg saveChangesBtn">�nderungen speichern</button>
+                <button class="btn btn-default btn-lg saveChangesBtn">Änderungen speichern</button>
             </div>
         </div>
 
