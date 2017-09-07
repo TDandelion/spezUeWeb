@@ -254,8 +254,8 @@ include 'layout.php';
             <div class="row">
                 <div class="col-md-4 col-sm-4 hidden-xs">
                     <h2>Raumwervaltung</h2>
-                    <img class="pic" src="images/61831580-Furniture-and-home-decor-icon-set-vector-illustration-Indoor-cabinet-interior-room-library-office-bo-Stock-Vector.jpg " />
-
+<!--                    <img class="pic" src="images/61831580-Furniture-and-home-decor-icon-set-vector-illustration-Indoor-cabinet-interior-room-library-office-bo-Stock-Vector.jpg " />-->
+                    <img class="pic" src="images/d43227b3e270cad5505383e0d8c4ee71.png" alt=""/>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="row mainMenu">
@@ -673,7 +673,8 @@ include 'layout.php';
             <div class="row">
                 <div class="col-md-4 col-sm-4 hidden-xs">
                     <h2>Sicherheitsverwaltung</h2>
-                    <img class="pic" src="images/safety-security-icons-set-38500318.jpg " />
+                    <br>
+                    <img class="pic" src="images/139782-security-collection.png" alt=""/>
 
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
