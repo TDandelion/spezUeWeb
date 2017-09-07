@@ -88,6 +88,17 @@ function getKitchenDevices(data){
     switchViews("kitchenView");
 }
 
+//not yet working!
+//function getWindows(data){
+//    $("#windowsTable").empty();
+//    console.log(data);
+//    var windows = JSON.parse(data);
+//    windows.forEach(function(val, ind){
+//        $("#windowsNames").append("<tr><th></th><th>"+val.geraetetyp_name +"</th>");
+//        $("#windowsTable").append("<tr><td>"+val.fk_raum_id +"</td><td><input type='radio'>on <input type='radio'>off</td>");
+//    });
+//}
+
 function addDevice(data){
     $("#addDevice_message").html(data);
     $("#addDevice_message").addClass("alert alert-warning").css("color", "red");

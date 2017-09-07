@@ -84,6 +84,13 @@ $(document).ready(() => {
         showKitchenDevices();
         switchViews("kitchenView");
     });
+    $("#windowBtn").click(function(){
+       showAllWindows();
+    });
+    
+    $("#kontrast").click(function(){
+        
+    });
 
     //not final
     /*$("button").click(function(){

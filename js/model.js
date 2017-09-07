@@ -144,3 +144,18 @@ function addDeviceToARoom(){
     });
 }
 
+function showAllWindows(){
+    $.ajax({
+        url: "backend/menu.php",
+        async: false,
+        type: "POST",
+        data:{
+            showWindows: 1
+        },
+        success: getWindows,
+        error: function(err){
+            alert("error");
+        }
+    });
+}
+

@@ -48,7 +48,7 @@ include 'layout.php';
                     <li><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-minus"></span></a></li>
                 </ul>
-                <button class="navbar-btn btn btn-default">Kontrastversion anzeigen</button>
+                <button class="navbar-btn btn btn-default" id="kontrast">Kontrastversion anzeigen</button>
                 <span id="welcome_msg" name="welcome_msg"></span>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-time"></span></a></li>
@@ -67,6 +67,7 @@ include 'layout.php';
             <div class="col-md-offset-3 col-md-6">
                 <div class="panel panel-default">
                 <div class="panel-heading">
+                    <p id="message"></p>
                     <h1 class="panel-title">Smart Home User Registration Form</h1>
                 </div>
                 <div class="panel-body">
@@ -74,7 +75,7 @@ include 'layout.php';
                         <input type="text" hidden="" name="user_id" id="user_id">
                         <div class="form-group">
                            <label for="firstname" class="col-md-4 control-label">
-                             First Name*</label>
+                             Vorname*</label>
                            <div class="col-md-8">
                                 <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Max" />
                                 <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>
@@ -83,7 +84,7 @@ include 'layout.php';
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-md-4 control-label">
-                             Last Name*</label>
+                             Nachname*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Mustermann" />
                                <span class="error"><?php if(isset($errors['lastnameError'])){ echo $errors['lastnameError'];}?></span><br>                               
@@ -99,7 +100,7 @@ include 'layout.php';
                         </div>
                         <div class="form-group">
                             <label for="passwordReg" class="col-md-4 control-label">
-                             Password*</label>
+                             Passwort*</label>
                             <div class="col-md-8">
                                <input type="password" class="form-control" id="passwordReg" name="passwordReg" placeholder="***********" />
                                <span class="error"><?php if(isset($errors['passwordError'])){ echo $errors['passwordError'];}?></span><br>
@@ -107,7 +108,7 @@ include 'layout.php';
                         </div>
                         <div class="form-group">
                             <label for="repeatpassword" class="col-md-4 control-label">
-                             Confirm Password*</label>
+                             Passwort Bestätigung*</label>
                             <div class="col-md-8">
                                 <input type="password" class="form-control" id="repeatpassword" name="repeatpassword" placeholder="***********" />
                                 <span class="error"><?php if(isset($errors['repeatError'])){ echo $errors['repeatError'];}?></span><br>
@@ -116,10 +117,9 @@ include 'layout.php';
                     
                 </div>
                 <div class="panel-footer" style="text-align: right">
-                    <input type="submit" id="register" name="register" value="register now" class="btn btn-default">
-                    <input name="cancel" value="cancel" id="cancel" class="btn btn-danger">
-                </div>
-                    <p id="message"></p>
+                    <input type="submit" id="register" name="register" value="registrieren" class="btn btn-default">
+                    <input name="cancel" value="abbrechen" id="cancel" class="btn btn-danger">
+                </div>             
                 </div>
                 </div>
             </div>
@@ -254,8 +254,7 @@ include 'layout.php';
             <div class="row">
                 <div class="col-md-4 col-sm-4 hidden-xs">
                     <h2>Raumwervaltung</h2>
-<!--                    <img class="pic" src="images/61831580-Furniture-and-home-decor-icon-set-vector-illustration-Indoor-cabinet-interior-room-library-office-bo-Stock-Vector.jpg " />-->
-                    <img class="pic" src="images/d43227b3e270cad5505383e0d8c4ee71.png" alt=""/>
+                    <img img class="pic" src="images/d43227b3e270cad5505383e0d8c4ee71_black.jpg" alt=""/>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="row mainMenu">
@@ -667,8 +666,6 @@ include 'layout.php';
         <li><a href="#" class="homeLink">Home</a></li>
         <li class="active">Security</li>
     </ol>
-
-
         <div class="menu">
             <div class="row">
                 <div class="col-md-4 col-sm-4 hidden-xs">
@@ -730,7 +727,19 @@ include 'layout.php';
             <div class="col-md-7 col-sm-6 col-sm-6">
                 <br />
                 <br />
+                
                 <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead id="windowsNames">
+                            
+                        </thead>
+                        <tbody id="windowsTable">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+<!--                <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr><th></th><th>Fenster 1</th><th>Fenster 2</th><<th>Fenster 3</th></tr>
@@ -812,7 +821,7 @@ include 'layout.php';
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div>-->
             </div>
             <div class="col-md-2 hidden-xs">
                 <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>
