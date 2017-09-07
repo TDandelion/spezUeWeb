@@ -45,7 +45,7 @@ function login(data){
       //$("p").addClass("alert alert-warning").css("color", "red");
       switchViews("loginView");
   } else{
-      $("#welcome_msg").text("Hello " + data);
+      $("#welcome_msg").text(displayMsg() + data + "! Wellcome to SmartHome!");
       $("body").css("background-color", "white");
       switchViews("homeView");
   }    
@@ -88,8 +88,20 @@ function getKitchenDevices(data){
     switchViews("kitchenView");
 }
 
-function addDevice(data){
+//not yet working!
+function getWindows(data){
+    $("#windowsTable").empty();
     console.log(data);
+    var windows = JSON.parse(data);
+    windows.forEach(function(val, ind){
+        $("#windowsNames").append("<tr><th></th><th>"+val.geraetetyp_name +"</th>");
+        $("#windowsTable").append("<tr><td>"+val.fk_raum_id +"</td><td><input type='radio'>on <input type='radio'>off</td>");
+    });
+}
+
+function addDevice(data){
+    $("#addDevice_message").html(data);
+    $("#addDevice_message").addClass("alert alert-warning").css("color", "red");
 }
 
 var checked = false;
@@ -100,4 +112,17 @@ function kitchenEnableAll(index){
     for(var i=0; i < selectOn.length; i++){
         selectOn[i].checked = checked;
     };
+}
+
+function displayMsg(){
+    var today = new Date();
+    var curHr = today.getHours();
+
+        if (curHr < 12) {
+          return 'Guten Morgen, ';
+        } else if (curHr < 18) {
+          return 'Guten Tag, ';
+        } else {
+          return 'Guten Abend, ';
+        };
 }
