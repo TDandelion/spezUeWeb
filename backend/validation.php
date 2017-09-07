@@ -3,8 +3,7 @@
 //registration form validation
 
 $firstname = $lastname = $emailReg = $passwordReg = $repeatPass = "";
-//$email = $_POST['email'];
-$device = $room = $status = $deviceName = "";
+$dev = $room = $status = $deviceName = "";
 $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
 
   if (isset($_POST['done'])){
@@ -106,9 +105,57 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
     // device form validation
     
     if(isset($_POST['addDevice'])){
+        $deviceNameError = "Bitte alle Felder ausfüllen!";
+        $errors = 0;
         
-        echo $_POST['deviceName'];
-        echo $_POST['device'];
-        echo $_POST['room'];
-        echo $_POST['status'];
+        if(empty($_POST['deviceName'])){
+            $errors ++;
+        }else{
+            $deviceName = $_POST['deviceName'];
+        }; 
+        
+        if(empty($_POST['device'])){
+            $errors ++;
+        }else{
+            $device = $_POST['device']; 
+        } 
+        
+        if(empty($_POST['room'])){
+            $errors ++;
+        }else{
+            $room = $_POST['room']; 
+        } 
+        
+        if(empty($_POST['status'])){
+            $errors ++;
+        }else{
+            $status = $_POST['status']; 
+        }
+        
+        if($errors == null){ 
+                
+          $deviceId = "SELECT geraet_id FROM geraet where geraet_name ='{$device}'";
+            foreach($pdo->query($deviceId) as $row){
+                $deviceIdResult = $row['geraet_id'];
+            }
+            //echo var_dump($queriedIdResult);     
+          $roomId = "SELECT raum_id FROM raum where raum_name ='{$room}'";
+            foreach($pdo->query($roomId) as $row){
+                $roomIdResult = $row['raum_id'];
+            }
+          $statusId = "SELECT id FROM status where status ='{$status}'";
+            foreach($pdo->query($statusId) as $row){
+                $statusIdResult = $row['id'];
+            }
+
+          $sql = "INSERT INTO geraetetyp(geraetetyp_name, fk_geraet_id, fk_raum_id, fk_status_id) values ('{$deviceName}','{$deviceIdResult}', '{$roomIdResult}', '{$statusIdResult}')";
+          //echo var_dump($sql);
+          $result = $pdo->query($sql);
+            
+            if($result){
+                echo "Gerät hinzugefügt!";              
+            }
+        }else{
+            echo $deviceNameError;
+        }
     }

@@ -49,7 +49,7 @@ function registerUserToDatabase(){
             $("#passwordReg").val('');
             $("#repeatpassword").val('');
             $("#message").html(data);
-            $("p").addClass("alert alert-warning").css("color", "red");         
+            $("#message").addClass("alert alert-warning").css("color", "red");         
             }, 
         error: function(err) {
             alert('error');
@@ -123,7 +123,7 @@ function showKitchenDevices(){
 
 function addDeviceToARoom(){
     var deviceName = $("#deviceName").val();
-    var device = $("input[name=device]:checked", "#addingDeviceForm").val();
+    var dev = $("input[name=device]:checked", "#addingDeviceForm").val();
     var room = $("input[name=room]:checked", "#addingDeviceForm").val();
     var status = $("input[name=deviceStatus]:checked", "#addingDeviceForm").val();
     
@@ -132,15 +132,15 @@ function addDeviceToARoom(){
         type: "POST",
         data:{
           addDevice: 1,
-          name: deviceName,
-          device:device,
-          raum: room,
+          deviceName: deviceName,
+          device: dev,
+          room: room,
           status: status
         },
         success: addDevice,
         error: function(err){
             alert("error");
         }
-    })
+    });
 }
 
