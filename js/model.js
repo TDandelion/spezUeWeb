@@ -15,7 +15,7 @@ function checkIfLoggedIn() {
       url: "backend/login.php",
       success: redirectToHome,
       error: function(err){ console.log(err);}
-  });
+  });       
   }
 
 function checkLogin(email, password, remember) {
@@ -52,6 +52,7 @@ function registerUserToDatabase(){
             "repeatPass": repeatPass
         },
         success: function(data) {
+            console.log(data);
             $("#firstname").val('');
             $("#lastname").val('');
             $("#emailReg").val('');
@@ -80,7 +81,7 @@ function logout(){
         success:function(){
             switchViews("loginView");
             $("body").css("background-color", "#DADADA");
-            //$("#login_message").hide();
+            $("#login_message").hide();
             //$("#message").hide();
         },
         error:function(err){
@@ -194,7 +195,7 @@ function showAllWindows(){
 
   function deletethisDevice(id){
       $.ajax({
-        url: "backend/admin.php",
+        url: "backend/menu.php",
         type: "POST",
         data:{
             id: id

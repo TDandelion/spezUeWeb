@@ -6,7 +6,7 @@ $firstname = $lastname = $emailReg = $passwordReg = $repeatPass = "";
 $dev = $room = $status = $deviceName = "";
 $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
 
-  if (isset($_POST['done'])){
+  if (isset($_POST['firstname'])){
 
       $fk_haus_id = 1;
       $firstnameError = "Bitte Vorname eingeben! <br>";
@@ -60,10 +60,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
             echo $passwordError;
         }else{
             $passwordReg = $_POST['passwordReg'];
-            //check, that the length is at least 4 char long!
-            if(strlen($passwordReg) < 7){
+            //check, that the length is at least 6 char long!
+            if(strlen($passwordReg) < 6){
                 $errors++;
-                $passwordError = "Ihr Passwort muss mindestens 7 Zeichen lang sein<br>";
+                $passwordError = "Ihr Passwort muss mindestens 6 Zeichen lang sein<br>";
                 echo $passwordError;
                 };
         };
@@ -81,7 +81,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
             $sql = "INSERT INTO user(name, email, password, fk_haus_id) values ('{$firstname}','{$emailReg}', '{$passwordReg}', '{$fk_haus_id}')";
             //echo var_dump($sql);
             $result = $pdo->query($sql);
-
+            
             if(!$result){
               echo "something went wrong!";
             }else{
@@ -91,6 +91,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=smarthome', 'username', '12345');
             echo '<script type="<text/javascript">',
                  '$("body").css("background-color", "white");',
                  'switchViews("homeView");',
+                 '$("#welcome_msg").text(displayMsg() + " welcome to SmartHome!");',
                  '</script>';
        }
   }

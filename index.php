@@ -79,7 +79,7 @@ include 'layout.php';
                              Vorname*</label>
                            <div class="col-md-8">
                                 <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Max" />
-                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>
+<!--                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>-->
 
                            </div>
                         </div>
@@ -88,7 +88,7 @@ include 'layout.php';
                              Nachname*</label>
                             <div class="col-md-8">
                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Mustermann" />
-                               <span class="error"><?php if(isset($errors['lastnameError'])){ echo $errors['lastnameError'];}?></span><br>
+<!--                               <span class="error"><?php if(isset($errors['lastnameError'])){ echo $errors['lastnameError'];}?></span><br>-->
                             </div>
                         </div>
                         <div class="form-group">
@@ -96,15 +96,15 @@ include 'layout.php';
                              Email*</label>
                             <div class="col-md-8">
                                <input type="email" class="form-control" id="emailReg" name="emailReg" placeholder="test@email.com" />
-                                <span class="error"><?php if(isset($errors['emailError'])){ echo $errors['emailError'];}?></span><br>
+<!--                                <span class="error"><?php if(isset($errors['emailError'])){ echo $errors['emailError'];}?></span><br>-->
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="passwordReg" class="col-md-4 control-label">
-                             Passwort*</label>
+                                Passwort*<p id="smallFont">mindestens 6 Zeichen lang</p></label>
                             <div class="col-md-8">
                                <input type="password" class="form-control" id="passwordReg" name="passwordReg" placeholder="***********" />
-                               <span class="error"><?php if(isset($errors['passwordError'])){ echo $errors['passwordError'];}?></span><br>
+<!--                               <span class="error"><?php if(isset($errors['passwordError'])){ echo $errors['passwordError'];}?></span><br>-->
                             </div>
                         </div>
                         <div class="form-group">
@@ -112,7 +112,7 @@ include 'layout.php';
                              Passwort Bestätigung*</label>
                             <div class="col-md-8">
                                 <input type="password" class="form-control" id="repeatpassword" name="repeatpassword" placeholder="***********" />
-                                <span class="error"><?php if(isset($errors['repeatError'])){ echo $errors['repeatError'];}?></span><br>
+<!--                                <span class="error"><?php if(isset($errors['repeatError'])){ echo $errors['repeatError'];}?></span><br>-->
                             </div>
                         </div>
 
@@ -147,7 +147,6 @@ include 'layout.php';
                              Wie willst du das Gerät benennen? *</label>
                            <div class="col-md-6">
                                 <input type="text" class="form-control" id="deviceName" name="deviceName" placeholder="" />
-                                <span class="error"><?php if(isset($errors['firstnameError'])){ echo $errors['firstnameError'];}?></span><br>
                            </div>
                         </div>
                         <div class="form-group">
@@ -166,10 +165,10 @@ include 'layout.php';
                             Wo willst du das Gerät hinzufügen?*</label>
                             <div class="col-md-6">
                                  <input type="radio" name="room" <?php if (isset($room) && $room=="Kueche") echo "checked";?> value="Kueche">Kueche<br>
-                                 <!--<input type="radio" name="room" <?php if (isset($room) && $room=="Vorzimmer") echo "checked";?> value="Vorzimmer">Vorzimmer<br>
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Vorzimmer") echo "checked";?> value="Vorzimmer">Vorzimmer<br>
                                  <input type="radio" name="room" <?php if (isset($room) && $room=="Schlafzimmer") echo "checked";?> value="Schlafzimmer">Schlafzimmer<br>
                                  <input type="radio" name="room" <?php if (isset($room) && $room=="Wohnzimmer") echo "checked";?> value="Wohnzimmer">Wohnzimmer<br>
-                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Badezimmer") echo "checked";?> value="Badezimmer">Badezimmer<br>-->
+                                 <input type="radio" name="room" <?php if (isset($room) && $room=="Badezimmer") echo "checked";?> value="Badezimmer">Badezimmer<br>
                             </div>
                         </div>
                         <div class="form-group">
@@ -740,7 +739,7 @@ include 'layout.php';
                     </table>
                 </div>
 
-<!--                <div class="table-responsive">
+                <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr><th></th><th>Fenster 1</th><th>Fenster 2</th><<th>Fenster 3</th></tr>
@@ -822,7 +821,7 @@ include 'layout.php';
                             </tr>
                         </tbody>
                     </table>
-                </div>-->
+                </div>
             </div>
             <div class="col-md-2 hidden-xs">
                 <a href="#"><img src="images/House_icon_Blue.jpg" class="homeSymbol homeLink" alt="house icon blue"></a>

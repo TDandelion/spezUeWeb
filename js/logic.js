@@ -42,14 +42,13 @@ function showWeather(data){
 function login(data){
   console.log(data);
   if(!data){
+      console.log(data);
       $("#login_message").html("<div class='alert alert-danger'>Login failed. Password or E-mail not correct</div>");
-      //$("p").addClass("alert alert-warning").css("color", "red");
       switchViews("loginView");
   } else{
     setHomeView(data);
   }
 }
-
 function setHomeView(data){
   $("#welcome_msg").text(displayMsg() + data + "! Welcome to SmartHome!");
   $("body").css("background-color", "white");
@@ -87,7 +86,7 @@ function getKitchenDevices(data){
        $("#kitchenDevicesTable").append("<tr id='" + val.geraetetyp_id + "'><td>" + val.geraetetyp_name + "</td><td>" +
               "<input type='radio' name='kitchen"+ ind +"' id='kitchenOn"+ind+"' value='on'>on </td><td>" +
                "<input type='radio' name='kitchen"+ ind +"' id='kitchenOff"+ind+"' value='off'>off</td><td>" +
-               "<button class='btn btn-xs btn-danger deleteDevice' ><i class='glyphicon glyphicon-trash'></i> Delete</button></td></tr>");
+               "<button class='btn btn-xs btn-danger deleteDevice' id='"+val.geraetetyp_id+"'><i class='glyphicon glyphicon-trash'></i> Delete</button></td></tr>");
         val.fk_status_id == 1 ? document.getElementById("kitchenOn"+ind).checked = true : document.getElementById("kitchenOff"+ind).checked = true;
     });
     switchViews("kitchenView");
@@ -100,7 +99,7 @@ function getWindows(data){
     var windows = JSON.parse(data);
     windows.forEach(function(val, ind){
         $("#windowsNames").append("<tr><th></th><th>"+val.geraetetyp_name +"</th>");
-        $("#windowsTable").append("<tr><td>"+val.fk_raum_id +"</td><td><input type='radio'>on <input type='radio'>off</td>");
+        $("#windowsTable").append("<tr><td>"+val.raum_name +"</td><td><input type='radio'>on <input type='radio'>off</td>");
     });
 }
 
@@ -113,8 +112,6 @@ function addDevice(data){
       $("#addDevice_message").html(data);
       $("#addDevice_message").addClass("alert alert-warning").css("color", "red");
     }
-
-
 }
 
 var checked = false;
@@ -158,5 +155,6 @@ function redirectToHome(data){
 }
 
 function successfullyDeleted(data){
+    console.log(data);
     showKitchenDevices();
 }

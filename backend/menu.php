@@ -42,8 +42,18 @@ if(isset($_POST['kitchenDevices'])){
 }
 
 if(isset($_POST['showWindows'])){
-    $sql = $pdo->prepare("SELECT geraetetyp_name, fk_raum_id from geraetetyp where fk_geraet_id=3 ORDER BY geraetetyp_name ASC ");
+    //$sql = $pdo->prepare("SELECT geraetetyp_name, fk_raum_id from geraetetyp where fk_geraet_id=3 ORDER BY geraetetyp_name ASC "); 
+    $sql = $pdo->prepare("SELECT geraetetyp.geraetetyp_name, raum.raum_name from geraetetyp inner join"
+        . " raum on geraetetyp.fk_raum_id=raum.raum_id where geraetetyp.fk_geraet_id=3 ORDER BY geraetetyp_name ASC");
     $sql->execute();
     $result=$sql->fetchAll();
     print json_encode($result);
+    
+}
+
+if(isset($_POST['id'])){
+  $id = $_POST['id'];
+  $statement = "DELETE FROM geraetetyp WHERE geraetetyp_id ='{$id}'";
+  $result = $pdo->query($statement);
+  return true;
 }

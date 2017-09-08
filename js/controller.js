@@ -91,12 +91,12 @@ $(document).ready(() => {
     $("#windowBtn").click(function(){
         showAllWindows();
     });
-    $("table").on('click', 'tbody tr', function(){
+    
+    $("table").on('click', 'button.deleteDevice', function(){
         var confirmOnDelete = confirm('Dieses Gerät löschen?');
         if(confirmOnDelete){
-            deletethisDevice(this.id);
+            deletethisDevice($(this).attr('id'));
         }
-
-    });
+    });    
 
 });
